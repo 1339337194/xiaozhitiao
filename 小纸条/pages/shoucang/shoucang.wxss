@@ -1,0 +1,121 @@
+/* pages/shoucang/shoucang.wxss */
+page{
+  background-color: #f1f1f1;
+}
+.head1{
+  width: 16%;
+  height: 37rpx;
+  top:6%;
+  position: fixed;
+  display: inline-block;
+}
+.head2{
+  width: 20%;
+  font-size: 34rpx;
+  left: 15%;
+  top:6%;
+  position: fixed;
+  display: inline-block;
+}
+.back{
+  width: 19rpx;
+  height: 38rpx;
+  margin-left: 50%;
+}
+
+.div{
+  width: 100%;
+  position:fixed;
+  height: 120rpx;
+  top:9%;
+  background: #f1f1f1;
+  z-index: 100;
+}
+.div1{
+  width: 80%;
+  position:fixed;
+  left: 10%;
+  height: 60rpx;
+  top:11%;
+  z-index: 100;
+}
+.div11{
+  border-bottom: 6rpx solid #ffd048;
+  width: 117rpx;
+  text-align: center;
+  line-height: 50rpx;
+  float: left;
+  margin-left: 90rpx;
+}
+.div12{
+  width: 117rpx;
+  text-align: center;
+  line-height: 56rpx;
+  float: right;
+  margin-right: 90rpx;
+}
+.wrap{
+  width: 92%;
+  left:4%;
+  margin-top:38%;
+  position:relative;
+}
+.ziti1{
+  font-family: simsun;
+  font-size: 36rpx;
+  color: #000000;
+}
+.div2{
+  z-index: 0;
+  width: 90%;
+  position: relative;
+  left: 5%;
+  height: 132rpx;
+  top:30%;
+  background: #fff;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+.div21{
+  width: 102rpx;
+  height: 102rpx;
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+  float:left;
+}
+.div22{
+  width:74%;
+   float:right;
+  margin-right: 5%;
+  margin-top: 18rpx;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  font-family: simsun;
+}
+.div23{
+  position: absolute;
+  right: 5%;
+  top: 54%;
+  font-size: 18rpx;
+  font-family: simsun;
+  color: #8c8780;
+}
+.div3{
+  z-index: 0;
+  width: 90%;
+  position: relative;
+  left: 5%;
+  height: 132rpx;
+  top:30%;
+  background: #f8f8f8;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+.div33{
+  position: absolute;
+  right: 5%;
+  top: 54%;
+  font-size: 18rpx;
+  font-family: simsun;
+  color: #8c8780;
+}

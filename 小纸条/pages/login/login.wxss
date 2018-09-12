@@ -1,0 +1,18 @@
+/* pages/login/login.wxss */
+.btndatis{
+   width: 190rpx;
+  height: 70rpx;
+ 
+  
+ border-radius: 35rpx;
+
+}
+.ziti3{
+  color: #231815;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+.normal{
+  background: #ffd149;
+}

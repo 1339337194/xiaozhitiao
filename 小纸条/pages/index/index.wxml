@@ -1,0 +1,16 @@
+
+<view>
+<view class='box-shadow-3' style='width:96%;margin-left:2%'>
+  <view class="div1" style=' background-image: url("../img/bg2.png");'>
+        <text class="ziti1">这是标题这是标题这是标题</text>
+  </view>
+  <view class="div2"> 
+        <text class='div21'>选择任一选项即可查看小纸条</text>
+        <view bindtap='div1click'  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:4%'>支付0.1元</view>
+        <view bindtap='div1click' class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:36%'>分 享
+        </view>
+        <view bindtap='div1click' class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:68%'>答 题
+        </view>
+  </view>
+  </view>
+</view>

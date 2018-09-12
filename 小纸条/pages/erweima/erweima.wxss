@@ -1,0 +1,103 @@
+.Zhezhao{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color:rgba(0, 0, 0, .5);
+    z-index:999;
+    top: 0;
+    left: 0;
+}
+.ZhezhaoContent{
+    padding: 20rpx 0;
+    width: 80%;
+    height: 500rpx;
+    background: #e1d2b1;
+    margin: 40% auto;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.hide{
+ display: none;
+}
+.show{ 
+ display: block;
+}
+.head1{
+  width: 16%;
+  height: 37rpx;
+  top:5%;
+  position: fixed;
+  display: inline-block;
+  z-index: 100;
+  
+}
+.head2{
+  z-index: 100;
+  width: 20%;
+  font-size: 34rpx;
+  left: 15%;
+  top:5%;
+  position: fixed;
+  display: inline-block;
+}
+.back{
+  width: 19rpx;
+  height: 38rpx;
+  margin-left: 50%;
+}
+.div1{
+  position: relative;
+  width: 96%;
+}
+.div11{
+  width:16rpx;height:66rpx;position:absolute;left:5%;margin-top:30rpx;
+}
+.ziti1{
+  font-size:60rpx;font-color:#302f32;position:absolute;left:10%;margin-top:20rpx;
+}
+.div12{
+  width:44rpx;height:44rpx;position:absolute;left:90%;margin-top:36rpx;
+}
+.ziti2{
+  font-size:20rpx;font-color:#000000;display:block;position:absolute;left:89%;margin-top:80rpx;
+}
+.div13{
+  width:94%;height:880rpx;position:absolute;margin-top:140rpx;left:5%;
+}
+.ziti3{
+  width:88%;left:6%;position:relative;top:1020rpx;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
+}
+.ziti4{
+  font-size:30rpx;color:#000000;line-height:49rpx;font-family:simsun;margin-left:15rpx;float:left;
+}
+.div2{
+  position:relative;top:1050rpx;left:6%;width:88%;
+}
+.ziti5{
+  font-size:28rpx;color:#000000;font-family:simsun;
+  line-height: 35rpx;
+  word-break:break-all;
+   word-wrap:break-word;
+   width:84%;
+   margin-left:12rpx;
+}
+.div3{
+  position:fixed;bottom:0rpx;height:90rpx;background:#dcdddd;z-index:10rpx;width:100%;
+}
+.div31{
+  margin-top:2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:88rpx;width:100%;
+}
+.input1{
+  background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:30rpx;padding:16rpx;
+  word-wrap: break-word; break-word: break-all;
+}
+.div32{
+  width:50rpx;height:50rpx;position:absolute;margin-left:598rpx;margin-top:25rpx;
+}
+.div33{
+  width:50rpx;height:45rpx;position:absolute;margin-left:677rpx;margin-top:30rpx;
+}/* pages/erweima/erweima.wxss */

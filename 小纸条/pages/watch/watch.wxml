@@ -1,0 +1,37 @@
+<!--pages/watch/watch.wxml-->
+<view class="">
+<view class='box-shadow-3 wrap'>
+ <view class="div11  hide{{showView?'':'show'}}" style=' background-image: url("{{image}}");'>
+        <text class="ziti11">{{title}}</text>
+  </view>
+  <view class='div1'>
+    <text class='zi1'>选择任一选项即可查看小纸条</text>
+      <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:4%'>支付0.1元</view>
+      <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:38%'> 
+      <button  class="btndatis ziti3 normal" wx:if="{{openid==null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >分 享</button>
+      <button class="btndatis ziti3 normal"  wx:if="{{openid!=null}}"  open-type='share'>分 享</button>      
+      </view>
+       <button wx:if="{{openid==null}}"  class="btndati ziti3 {{isChecked?'is_checked':'normal'}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >答 题</button>
+      <view  wx:if="{{openid!=null}}"  class="btndati ziti3 {{isChecked?'is_checked':'normal'}}"   bindtap='change'>答 题</view>
+    </view>
+  </view>
+    <view class="div2 box-shadow-3 hide{{showView?'show':''}}">
+      <text class='zi2'>{{titles}}</text>
+      <view bindtap="seleck" data-index="1">
+        <image src="../img/bg{{img1}}.png" style="top:22%;" class="div21" bindtap=""></image>
+        <text style="top:22%;" class="ziti4">A、{{data[0]['optionname']}}</text>
+      </view>
+      <view bindtap="seleck" data-index="2">
+        <image src="../img/bg{{img2}}.png" style="top:42%;" class="div21"></image>
+        <text style="top:42%;" class='ziti4'>B、{{data[1]['optionname']}}</text>
+      </view>
+      <view bindtap="seleck" data-index="3">
+        <image src="../img/bg{{img3}}.png" style="top:62%;" class="div21"></image>
+        <text style="top:62%;" class='ziti4'>C、{{data[2]['optionname']}} </text>
+      </view>
+      <view bindtap="seleck" data-index="4">
+        <image src="../img/bg{{img4}}.png" style="top:80%;" class="div21"></image>
+        <text style="top:80%;" class='ziti4'>D、{{data[3]['optionname']}}</text>
+      </view>
+    </view>
+</view>
