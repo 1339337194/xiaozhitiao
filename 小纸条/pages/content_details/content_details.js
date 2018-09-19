@@ -12,7 +12,8 @@ Page({
     ping:[],
     content:'',
     shou:0,
-    usercol:''
+    usercol:'',
+    showView1:false
   },
   showtip:function(){
     var that=this;
@@ -259,7 +260,7 @@ Page({
    onChangeShowState: function () {
     var that = this;
     that.setData({
-      showView: (!that.data.showView)
+      showView1: (!this.data.showView1)
     })
   },
 

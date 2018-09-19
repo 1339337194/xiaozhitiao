@@ -5,32 +5,10 @@
 .show{ 
  display: block;
 }
-.head1{
-  width: 16%;
-  height: 37rpx;
-  top:5%;
-  position: fixed;
-  display: inline-block;
-  z-index: 100;
-  
-}
-.head2{
-  z-index: 100;
-  width: 20%;
-  font-size: 34rpx;
-  left: 15%;
-  top:5%;
-  position: fixed;
-  display: inline-block;
-}
-.back{
-  width: 19rpx;
-  height: 38rpx;
-  margin-left: 50%;
-}
 .div1{
   position: relative;
   width: 96%;
+  height: 120rpx;
 }
 .div11{
   width:16rpx;height:66rpx;position:absolute;left:5%;margin-top:30rpx;
@@ -45,16 +23,16 @@
   font-size:20rpx;font-color:#000000;display:block;position:absolute;left:90%;margin-top:76rpx;
 }
 .div13{
-  width:94%;height:880rpx;position:absolute;margin-top:140rpx;left:5%;
+  width:96%;height:880rpx;position:relative;margin-left:2%;
 }
 .ziti3{
-  width:88%;left:6%;position:relative;top:1020rpx;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
+  width:88%;left:6%;position:relative;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
 }
 .ziti4{
   font-size:30rpx;color:#000000;line-height:49rpx;font-family:simsun;margin-left:15rpx;float:left;
 }
 .div2{
-  position:relative;top:1050rpx;left:6%;width:88%;
+  position:relative;left:6%;width:88%;
 }
 .ziti5{
   font-size:28rpx;color:#000000;font-family:simsun;
@@ -65,17 +43,17 @@
    margin-left:12rpx;
 }
 .div3{
-  position:fixed;bottom:0rpx;height:90rpx;background:#dcdddd;z-index:10rpx;width:100%;
+  position:fixed;bottom:0rpx;height:115rpx;background:#dcdddd;z-index:10rpx;width:100%;
 }
 .div31{
-  margin-top:2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:88rpx;width:100%;
+  margin-top:2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:115rpx;width:100%;
 }
 .input1{
   background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:30rpx;padding:16rpx;
   word-wrap: break-word; break-word: break-all;
 }
 .div32{
-  width:50rpx;height:50rpx;position:absolute;margin-left:598rpx;margin-top:25rpx;
+  width:50rpx;height:50rpx;position:absolute;margin-left:598rpx;margin-top:32rpx;
 }
 .div33{
   width:50rpx;height:45rpx;position:absolute;margin-left:677rpx;margin-top:30rpx;background:url(../img/bg19.png);

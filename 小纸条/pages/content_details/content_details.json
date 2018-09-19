@@ -1,1 +1,5 @@
-{}
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "纸条内容"
+}

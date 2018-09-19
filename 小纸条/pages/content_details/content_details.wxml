@@ -1,33 +1,29 @@
 <!--pages/content_details/content_details.wxml-->
-<view bindtap='fanhui' class="head1">
-    <image src='../img/bg23.jpg' class="back"></image>
-</view>
-<view class="head2">
-   纸条内容
-</view>
-<view style="margin-top:130rpx;">
+<view style='width:100%;position:absolute;padding-bottom:110rpx;'>
 <view class="div1">
       <image src='../img/bg13.png' class='div11'></image>
       <text class='ziti1'>{{content.title}}</text>
-      <view bindtap='showtip'>
-      <image src='../img/bg14.png' class='div12'></image>
-      <text class='ziti2'>举报</text>
+      <view bindtap='showtip' style='height:120rpx;'>
+          <image src='../img/bg14.png' class='div12'></image>
+          <text class='ziti2'>举报</text>
       </view>
-      <image src="{{img}}{{content.url}}" class='div13'></image>
 </view>
-<view class='ziti3'>{{content.content}}
+ <image src="{{img}}{{content.url}}" style='width:96%;margin-left:2%;border-radius:15rpx;'></image>
+ <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
+<view style='width:96%;margin-left:2%;position:relative;'  wx:for="{{content.urls}}">
+  <image src="{{img}}{{item}}" style='border-radius:15rpx;margin-top:25rpx;width:100%;'></image>
 </view>
-<view class='ziti3'  wx:for="{{content.urls}}"><image src="{{img}}{{item}}"></image></view>
 <!-- <view  wx:for="{{content.urls}}">{{item}}</view> -->
-<view style='position:relative;top:1050rpx;left:5%;'>
+<view style='position:relative;margin-top:25rpx;margin-left:2%'>
       <image src='../img/bg13.png' style='width:16rpx;height:49rpx;float:left;'></image>
       <text class='ziti4'>评论</text>
       <view style='clear:both'></view>
 </view>
 <view class='div2' wx:for="{{ping}}" >
     <!-- <image src='../img/bg16.png' style='width:26rpx;height:26rpx;'></image> -->
-    <view style='width:50rpx;height:50rpx; background-color:{{usercol}}'></view>
-    <text data-pid='{{item.id}}'  bindlongtap='havesave' class='ziti5'>{{item.content}}</text>
+    <view style='width:50rpx;margin:15rpx 0;height:50rpx; background-color:{{usercol}};'>
+        <text data-pid='{{item.id}}'  bindlongtap='havesave' class='ziti5'>{{item.content}}</text>
+    </view>
     <view style='clear:both;'></view>
 </view>
 <!--
@@ -39,16 +35,16 @@
 <form bindsubmit="formSubmit">
 <view class="div3">
     <view class='div31'>
-          <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' bindtouchstart='onChangeShowState' ></textarea>
-          <view class="hide{{showView?'':'show'}}">
+          <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindblur='onChangeShowState'></textarea>
+          <view class="hide{{showView1?'':'show'}}">
                 <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
-                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' ></image>
+                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:48rpx;'></image>
                 <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
                 <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
-                <button style='width:50rpx;height:50rpx;background:none;' open-type='share' class='div33'></button>
-                
+                <button style="width:50rpx;height:50rpx;border:none;background:url('../img/bg19.png');background-repeat:no-repeat;background-size:54rpx 50rpx;margin-top:32rpx;" class='div33' open-type='share'>
+                </button>    
           </view>
-           <view style='background:#ffff00;width:100rpx;height:45rpx;position:absolute;margin-left:610rpx;margin-top:30rpx;' class="hide{{showView?'show':''}}" > <button style='font-size:10px' formType="submit">发表</button></view>
+           <view style='position:absolute;margin-left:610rpx;margin-top:30rpx;' class="hide{{showView1?'show':''}}" > <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;' formType="submit">发表</button></view>
     </view>
 </view>
 </form>

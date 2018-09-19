@@ -1,10 +1,4 @@
-<!--pages/shoucang/shoucang.wxml-->
-<view  bindtap='fanhui' class="head1">
-    <image src='../img/bg22.jpg' class="back"></image>
-</view>
-<view class="head2">
-   收藏夹
-</view>
+<view style='width:100%;height:100%;background:#f1f1f1;position:absolute;'>
 <view class='div'>
     <view class='div1'>
         <view bindtap='shou' class="div11"><text class="ziti1">收藏</text></view>
@@ -14,12 +8,13 @@
 <view class="wrap">
 
 
-    <view class='div2'  wx:for="{{zhi}}">
-    <view bindtap='xiang' data-id='{{item.id}}'>
+    <view class='div2' data-id='{{item.id}}' bindtap='xiang' wx:for="{{zhi}}">
+    <view  >
          <image src="{{img}}{{item.url}}" class='div21'></image>
          <text class='div22'>{{item.title}}</text>
          <text class='div23'>{{item.intime}}</text>
          </view>
     </view>
    
+</view>
 </view>

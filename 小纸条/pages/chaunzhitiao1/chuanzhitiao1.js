@@ -33,11 +33,6 @@ Page({
     // 单击事件点击后要触发的函数
     lastTapTimeoutFunc: null,
   },
-  div1click:function(){
-   wx.navigateTo({
-      url: "/pages/shoucang/shoucang"
-    })
-  },
   showerweima: function (e) {
     var that = this;
  wx.request({
@@ -130,7 +125,11 @@ Page({
   onLoad: function (options) {
   
   },
-  
+  div1click:function(){
+    wx.navigateTo({
+      url: '../shoucang/shoucang',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

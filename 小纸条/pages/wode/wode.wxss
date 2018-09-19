@@ -1,7 +1,4 @@
 /* pages/shoucang/shoucang.wxss */
-page{
-  background-color: #f1f1f1;
-}
 .head1{
   width: 16%;
   height: 37rpx;
@@ -27,17 +24,16 @@ page{
   width: 100%;
   position:fixed;
   height: 120rpx;
-  top:9%;
   background: #f1f1f1;
   z-index: 100;
 }
 .div1{
   width: 80%;
   position:fixed;
-  left: 10%;
   height: 60rpx;
-  top:11%;
+  margin-left:10%;
   z-index: 100;
+  margin-top: 15rpx;
 }
 .div11{
   
@@ -56,10 +52,9 @@ page{
   margin-right: 90rpx;
 }
 .wrap{
-  width: 92%;
-  left:4%;
-  margin-top:38%;
-  position:relative;
+  width: 96%;
+  margin-left:2%;
+  margin-top: 120rpx;
 }
 .ziti1{
   font-family: simsun;
@@ -68,11 +63,10 @@ page{
 }
 .div2{
   z-index: 0;
-  width: 90%;
+  width: 96%;
   position: relative;
-  left: 5%;
+  margin-left: 2%;
   height: 132rpx;
-  top:30%;
   background: #fff;
   border-radius: 15rpx;
   margin-top: 20rpx;
