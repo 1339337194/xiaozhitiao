@@ -18,7 +18,7 @@ button::after {
 }
 .ziti1{
   font-size:60rpx;font-color:#302f32;position:absolute;left:10%;margin-top:20rpx;
-  width:81%;height:auto; 
+  width:73%;height:auto; 
 }
 .div12{
   width:44rpx;height:44rpx;position:absolute;left:90%;margin-top:36rpx;

@@ -1,8 +1,8 @@
 <!--pages/content_details/content_details.wxml-->
 <view style='width:100%;position:absolute;padding-bottom:120rpx;'>
-<view class="div1">
+<view class="div1" style='height:auto'>
       <image src='../img/bg13.png' class='div11'></image>
-      <view class='ziti1'>{{content.title}}</view>
+      <view class='ziti1' style='overflow: hidden;white-space: nowrap;'>{{content.title}}</view>
       <view bindtap='showtip' style='height:120rpx;'>
           <image src='../img/bg14.png' class='div12'></image>
           <text class='ziti2'>举报</text>

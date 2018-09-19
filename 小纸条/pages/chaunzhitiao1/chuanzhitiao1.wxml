@@ -16,7 +16,7 @@
           </view>
 
    
-    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' style='height:auto;margin:15rpx 0;margin-left:10%;' class='text1' bindinput="getInput"></textarea>
+    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' style='height:200rpx;margin:15rpx 0;margin-left:10%;' class='text1' bindinput="getInput"></textarea>
 
           <view style='width:100%'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
