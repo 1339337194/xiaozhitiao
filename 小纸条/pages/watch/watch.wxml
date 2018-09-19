@@ -6,7 +6,7 @@
   </view>
   <view class='div1'>
     <text class='zi1'>选择任一选项即可查看小纸条</text>
-      <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:4%'>支付0.1元</view>
+      <view  class="btn1 ziti3"  bindtap='pay'  style='background-image:url("../img/bg3.png");left:4%'>赏一下</view>
       <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:38%'> 
       <button  class="btndatis ziti3 normal" wx:if="{{openid==null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >分 享</button>
       <button class="btndatis ziti3 normal"  wx:if="{{openid!=null}}"  open-type='share'>分 享</button>      

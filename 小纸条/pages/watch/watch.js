@@ -127,6 +127,68 @@ Page({
     })
 
   },
+
+
+  /*
+ 调起微信支付
+ @param 支付价格，不填写默认为1分钱
+ */
+  pay: function (total_fee) {
+      var that=this;
+    var total_fee = 1;
+    wx.login({
+      success: res => {
+
+        //code 用于获取openID的条件之一
+        var code = res.code;
+        wx.request({
+          url: app.globalData.url + 'index/pay',
+          method: "POST",
+          data: {
+            total_fee: total_fee,
+            code: code,
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded' // 默认值
+          },
+          success: function (res) { //后端返回的数据
+            var data = res.data;
+            console.log(data);
+            console.log(data["timeStamp"]);
+            wx.requestPayment({
+              timeStamp: data['timeStamp'],
+              nonceStr: data['nonceStr'],
+              package: data['package'],
+              signType: data['signType'],
+              paySign: data['paySign'],
+              success: function (res) {
+                wx.showModal({
+                  title: '提示',
+                  showCancel: false,
+                  content: '支付成功',
+                  success: function (res) {
+                    wx.navigateTo({
+                      url: "/pages/content_details/content_details?id=" + that.data.id
+                    })
+                  }
+                })
+              },
+              fail: function (res) {
+                console.log(res);
+              }
+            })
+          }
+        });
+
+
+      }
+    })
+  },
+
+
+
+
+  
   seleck: function(e){
     var that=this;
     console.log(e.currentTarget.dataset.index);
