@@ -7,6 +7,7 @@ Page({
    */
   data: {
     isChecked: false,
+    showView: false,
     data:
       [{ img: 12, option: 'A', optionname: "a的数据"},
       { img: 12, option: 'B', optionname: "b的数据" },
@@ -122,8 +123,7 @@ Page({
     var that = this;
     this.setData({
       isChecked: true,
-    
-       showView: (!that.data.showView)
+       showView:true
     })
 
   },

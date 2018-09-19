@@ -18,6 +18,7 @@ button::after {
 }
 .ziti1{
   font-size:60rpx;font-color:#302f32;position:absolute;left:10%;margin-top:20rpx;
+  width:81%;height:auto; 
 }
 .div12{
   width:44rpx;height:44rpx;position:absolute;left:90%;margin-top:36rpx;
@@ -26,7 +27,7 @@ button::after {
   font-size:20rpx;font-color:#000000;display:block;position:absolute;left:90%;margin-top:76rpx;
 }
 .div13{
-  width:96%;height:880rpx;position:relative;margin-left:2%;
+  width:96%;height:880rpx;position:relative;margin-left:2%;margin-bottom: 10rpx;margin-top: 10rpx;
 }
 .ziti3{
   width:88%;left:6%;position:relative;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;

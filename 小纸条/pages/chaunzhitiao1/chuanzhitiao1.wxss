@@ -2,11 +2,11 @@
 .wrap{
   height: 100%;
   width: 100%;
-  padding-bottom: 100rpx;
+  padding-bottom: 170rpx;
 }
 .div1{
   width:250rpx;
-  height:70rpx;
+  height:100rpx;
   margin-left: 34%;
   margin-top: 60rpx;
 }

@@ -1,13 +1,15 @@
 <!--pages/watch/watch.wxml-->
-<view class="">
-<view class='box-shadow-3 wrap'>
- <view class="div11  hide{{showView?'':'show'}}" style=' background-image: url("{{image}}");'>
+
+<view class='wrap'>
+ <view class="div11  hide{{showView?'':'show'}} box-shadow-6" style='background-image: url("{{image}}");'>
         <text class="ziti11">{{title}}</text>
   </view>
-  <view class='div1'>
-    <text class='zi1'>选择任一选项即可查看小纸条</text>
-      <view  class="btn1 ziti3"  bindtap='pay'  style='background-image:url("../img/bg3.png");left:4%'>赏一下</view>
-      <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:38%'> 
+  <view class='div1 box-shadow-3'>
+    <view class='zi1'>选择任一选项即可查看小纸条</view>
+      <view  class="btn1 ziti3"  bindtap='pay' style='left:4%;background:#ffd148;border-radius:50rpx;' >
+          赏一下
+      </view>
+      <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:37%'> 
       <button  class="btndatis ziti3 normal" wx:if="{{openid==null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >分 享</button>
       <button class="btndatis ziti3 normal"  wx:if="{{openid!=null}}"  open-type='share'>分 享</button>      
       </view>
@@ -34,4 +36,3 @@
         <text style="top:80%;" class='ziti4'>D、{{data[3]['optionname']}}</text>
       </view>
     </view>
-</view>
