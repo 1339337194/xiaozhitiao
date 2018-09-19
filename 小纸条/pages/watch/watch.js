@@ -135,7 +135,7 @@ Page({
  */
   pay: function (total_fee) {
       var that=this;
-    var total_fee = 1;
+    var total_fee = 10;
     wx.login({
       success: res => {
 
