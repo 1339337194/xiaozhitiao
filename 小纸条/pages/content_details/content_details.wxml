@@ -35,13 +35,14 @@
 <form bindsubmit="formSubmit">
 <view class="div3">
     <view class='div31'>
-          <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindblur='onChangeShowState'></textarea>
+          <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState"></textarea>
           <view class="hide{{showView1?'':'show'}}">
                 <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
                  <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:48rpx;'></image>
                 <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
                 <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
-                <button style="width:50rpx;height:50rpx;border:none;background:url('../img/bg19.png');background-repeat:no-repeat;background-size:54rpx 50rpx;margin-top:32rpx;" class='div33' open-type='share'>
+                <button style="height:80rpx;background:none;position:absolute;margin-left:630rpx;margin-top:8rpx;"  open-type='share'>
+                <image src="../img/bg19.png" style="width:55rpx;height:44rpx;"></image>
                 </button>    
           </view>
            <view style='position:absolute;margin-left:610rpx;margin-top:30rpx;' class="hide{{showView1?'show':''}}" > <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;' formType="submit">发表</button></view>

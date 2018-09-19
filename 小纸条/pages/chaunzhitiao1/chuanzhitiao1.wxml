@@ -1,45 +1,44 @@
 <form bindsubmit="formSubmit">
 <view class='wrap'>
-<view class="container">
     <image src="../img/bg5.png" class="div1"></image>
-    <view bindtap='div1click' class="div2" style='background-image:url(../img/bg9.png);background-size:166rpx 60rpx;'>
-        <text style="font-size:28rpx;margin-left:56rpx;">收藏夹</text>
+    <view bindtap='div1click' style='width:166rpx;height:60rpx;float:right;margin-right:30rpx;margin-top:20rpx;line-height:60rpx;font-size:28rpx;'>
+        <image  src='../img/bg9.png' style='width:100%;height:60rpx;'></image>  
+        <view style="z-index:999;position:absolute;margin-top:-76rpx;font-size:28rpx;margin-left:58rpx;">收藏夹</view>
     </view>
-    <image src="../img/bg7.png" class="div4"></image>
     <input type='text' name='title'  placeholder='写个标题' class='input1' maxlength='25'></input>
+    <image src="../img/bg7.png" class="div4"></image>
     <input hidden='true'  name='url' value='{{imgurl}}'></input>
 
 
-    <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"></image>
+    <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"  class="div5"></image>
         <view  wx:if="{{imgss==''}}"  bindtap="upimg" style='width:700rpx' class="educt_upload_add" >
                <image src='../img/bg6.png' class='div5'></image>
           </view>
 
    
-    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content' class='text1' maxlength='5000'></textarea>
+    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' style='height:auto;margin:15rpx 0;margin-left:10%;' class='text1' bindinput="getInput"></textarea>
 
           <view style='width:100%'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
-              <image style='width:500rpx;hrigth:504rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload"></image>
+              <image style='width:88%;margin-top:66rpx;margin-left: 6%;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload"></image>
                <!-- <input hidden='true'  name='urls[{{index}}]' value='{{evalList[0].imgList[index]}}'></input> -->
               <!-- <image style='width:30px;height:30px;margin-bottom:70px' src="../img/deltel.png" bindtap='clearImg' data-index="{{index}}" class="deltel"></image> -->
           </view>
 </view>
 
           <view style='width:134px' class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}">
-             <image style='width:102px' src='../img/bg24.jpg' class='div6'></image>
+             <image  src='../img/bg24.jpg' class='div6'></image>
 
 
           </view>
 
     
-     <button  class="btndatis ziti3 normal" style=''  formType="submit">提交</button>
+     <view  style='position:fixed;height:100rpx;width:100%;background:#fff;bottom:0;'><button  class="btndatis ziti3 normal" formType="submit" style='margin-top:13rpx;'>提交</button></view>
 <!-- bindtap='showerweima'  
     <view  class="div3" style='background-image:url(../img/bg8.png);background-size:355rpx 90rpx;line-height:90rpx;'>
          
           <text bindlongtap="formSubmit" class='zi3'>分享给好友</text>
     </view> -->
-</view>
 </view>
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>

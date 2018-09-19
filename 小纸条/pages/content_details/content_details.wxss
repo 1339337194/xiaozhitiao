@@ -1,4 +1,7 @@
 /* pages/content_details/content_details.wxss */
+button::after {
+  border: none;
+}
 .hide{
  display: none;
 }
