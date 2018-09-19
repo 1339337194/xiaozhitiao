@@ -168,7 +168,7 @@ Page({
       method: "POST",
       success: function (res) {
         console.log(res.data);
-
+        console.log('s');
         if (res.data.code == 0) {
           that.setData({
             shou: 1
@@ -195,25 +195,25 @@ Page({
         console.log(res.data);
 
         if (res.data.code == 0) {
-          that.setData({
-            shou: 1
-          })
+          // that.setData({
+          //   shou: 1
+          // })
 
         }
       }
     })
 
   },
-  onCollectionTap: function (event) {　　　
-            var postsCollected = wx.getStorageSync('posts_collected');   
-             var postCollected = postsCollected[this.data.currentPostId];   
-             postCollected = !postCollected;
-             postsCollected[this.data.currentPostId] = postCollected;
-             wx.setStorageSync('posts_collected', postsCollected);
-             this.setData({
-                collected: postCollected 
-               })
-  },
+  // onCollectionTap: function (event) {　　　
+  //           var postsCollected = wx.getStorageSync('posts_collected');   
+  //            var postCollected = postsCollected[this.data.currentPostId];   
+  //            postCollected = !postCollected;
+  //            postsCollected[this.data.currentPostId] = postCollected;
+  //            wx.setStorageSync('posts_collected', postsCollected);
+  //            this.setData({
+  //               collected: postCollected 
+  //              })
+  // },
   havesave: function (e) {
     console.log(e.target.dataset.pid);
     var that = this;
