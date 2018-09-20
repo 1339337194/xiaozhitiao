@@ -11,13 +11,14 @@
 
 
     <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"  class="div5"></image>
-        <view  wx:if="{{imgss==''}}"  bindtap="upimg" style='width:700rpx' class="educt_upload_add" >
+        <view  wx:if="{{imgss==''}}"  bindtap="upimg"  class="educt_upload_add" >
                <image src='../img/bg6.png' class='div5'></image>
           </view>
 
-   
-    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' style='height:200rpx;margin:15rpx 0;margin-left:10%;' class='text1' bindinput="getInput"></textarea>
-
+   <view class="row {{isRuleTrue?'hide':'show'}}" id="textareawrap" catchtap="onFocus">
+    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' 
+    class="text1"  auto-height style='z-index:0'></textarea>
+   </view>
           <view style='width:100%'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
               <image style='width:88%;margin-top:66rpx;margin-left: 6%;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload"></image>
@@ -26,23 +27,23 @@
           </view>
 </view>
 
-          <view style='width:134px' class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}">
+          <view style='width:210rpx;margin-left:2%;' class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}">
              <image  src='../img/bg24.jpg' class='div6'></image>
 
 
           </view>
 
     
-     <view  style='position:fixed;height:100rpx;width:100%;background:#fff;bottom:0;'><button  class="btndatis ziti3 normal" formType="submit" style='margin-top:13rpx;'>提交</button></view>
 <!-- bindtap='showerweima'  
     <view  class="div3" style='background-image:url(../img/bg8.png);background-size:355rpx 90rpx;line-height:90rpx;'>
          
           <text bindlongtap="formSubmit" class='zi3'>分享给好友</text>
     </view> -->
 </view>
+<view  style='position:fixed;height:120rpx;width:100%;background:#fff;bottom:0;z-index:999;'><button  class="btndatis ziti3 normal" formType="submit" style='margin-top:15rpx;color:#fff;font-size:34rpx;line-height:90rpx;height:90rpx;width:356rpx;border-radius:50rpx;'>提交</button></view>
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
-        <view class='ZhezhaoContent'>
-            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}' >分享</button>
+        <view class='ZhezhaoContent' >
+            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}'>分享</button>
         </view>
     </view>

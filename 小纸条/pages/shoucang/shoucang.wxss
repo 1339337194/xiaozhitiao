@@ -1,8 +1,8 @@
-
+page{background: #f1f1f1;}
 .div{
   width: 100%;
   position:fixed;
-  height: 120rpx;
+  height: 110rpx;
   background: #f1f1f1;
   z-index: 100;
 }
@@ -32,7 +32,7 @@
 .wrap{
   width: 96%;
   margin-left:2%;
-  margin-top: 120rpx;
+  margin-top: 110rpx;
 }
 .ziti1{
   font-family: simsun;

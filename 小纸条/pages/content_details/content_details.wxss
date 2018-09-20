@@ -50,7 +50,7 @@ button::after {
   position:fixed;bottom:0rpx;height:115rpx;background:#dcdddd;z-index:10rpx;width:100%;
 }
 .div31{
-  margin-top:2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:115rpx;width:100%;
+  margin-top:2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:115rpx !important;width:100%;
 }
 .input1{
   background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:30rpx;padding:16rpx;

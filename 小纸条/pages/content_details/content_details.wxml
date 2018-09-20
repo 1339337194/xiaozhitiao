@@ -2,13 +2,13 @@
 <view style='width:100%;position:absolute;padding-bottom:120rpx;'>
 <view class="div1" style='height:auto'>
       <image src='../img/bg13.png' class='div11'></image>
-      <view class='ziti1' style='overflow: hidden;white-space: nowrap;'>{{content.title}}</view>
+      <view class='ziti1' auto-height style='position:relative;'>{{content.title}}</view>
       <view bindtap='showtip' style='height:120rpx;'>
           <image src='../img/bg14.png' class='div12'></image>
           <text class='ziti2'>举报</text>
       </view>
 </view>
- <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;margin-left:5%;border-radius:15rpx;'></image>
+ <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;position:relative;margin-top:10rpx;margin-left:5%;border-radius:15rpx;'></image>
  <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
 
 <view style='width:90%;margin-left:5%;position:relative;' wx:for="{{content.urls}}">
@@ -41,9 +41,10 @@
                  <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:48rpx;'></image>
                 <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
                 <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
-                <button style="height:80rpx;background:none;position:absolute;margin-left:630rpx;margin-top:20rpx;"  open-type='share'>
-                <image src="../img/bg19.png" style="width:55rpx;height:44rpx;"></image>
-                </button>    
+                <view style='position:absolute;margin-left:630rpx;margin-top:3%;'><button style="background:none;"  open-type='share'>
+                <image src="../img/bg19.png" style="width:55rpx;height:46rpx;"></image>
+                </button>
+                </view>    
           </view>
            <view style='position:absolute;margin-left:610rpx;margin-top:30rpx;' class="hide{{showView1?'show':''}}" > <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;' formType="submit">发表</button></view>
     </view>
