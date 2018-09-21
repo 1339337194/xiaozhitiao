@@ -1,4 +1,10 @@
 /* pages/content_details/content_details.wxss */
+.ipx1-bottom{
+margin-top:3%;
+}
+.ipx-bottom{
+  margin-top:1%;
+}
 button::after {
   border: none;
 }
@@ -9,34 +15,37 @@ button::after {
  display: block;
 }
 .div1{
-  position: relative;
+  position:fixed;
   width: 96%;
   height: 120rpx;
+  background: #fff;
 }
 .div11{
   width:16rpx;height:66rpx;position:absolute;left:5%;margin-top:30rpx;
 }
 .ziti1{
-  font-size:60rpx;font-color:#302f32;position:absolute;left:10%;margin-top:20rpx;
-  width:73%;height:auto; 
+  font-size:60rpx;font-color:#302f32;margin-left:10%;margin-top:20rpx;
+  width:82%;height:auto; 
 }
 .div12{
-  width:44rpx;height:44rpx;position:absolute;left:90%;margin-top:36rpx;
+  width:44rpx;height:44rpx;margin-top:32rpx;
 }
 .ziti2{
-  font-size:20rpx;font-color:#000000;display:block;position:absolute;left:90%;margin-top:76rpx;
+  font-size:20rpx;font-color:#000000;margin-top:-10rpx;
+float:left;
+
 }
 .div13{
   width:96%;height:880rpx;position:relative;margin-left:2%;margin-bottom: 10rpx;margin-top: 10rpx;
 }
 .ziti3{
-  width:88%;left:6%;position:relative;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
+  width:88%;margin-left:6%;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
 }
 .ziti4{
   font-size:30rpx;color:#000000;line-height:49rpx;font-family:simsun;margin-left:15rpx;float:left;
 }
 .div2{
-  position:relative;left:6%;width:88%;
+  margin:25rpx 0;margin-left:5%;width:90%;
 }
 .ziti5{
   font-size:28rpx;color:#000000;font-family:simsun;
@@ -47,13 +56,13 @@ button::after {
    margin-left:12rpx;
 }
 .div3{
-  position:fixed;bottom:0rpx;height:115rpx;background:#dcdddd;z-index:10rpx;width:100%;
+  position:fixed;bottom:0rpx;height:118rpx;background:#dcdddd;z-index:10rpx;width:100%;
 }
 .div31{
-  margin-top:2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:115rpx !important;width:100%;
+ margin-top: 2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:116rpx !important;width:100%;
 }
 .input1{
-  background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:30rpx;padding:16rpx;
+  background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:30rpx;padding:14rpx;line-height: 56rpx;
   word-wrap: break-word; break-word: break-all;
 }
 .div32{

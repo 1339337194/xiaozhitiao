@@ -21,6 +21,8 @@ Page({
     gsimg:'',
     imgurl: '',
     title:'',
+    input_title: '',
+    input_content:'',
     phone: '',
     evalList: [{ tempFilePaths: [], imgList: [] }],
     tempFilePaths: [],
@@ -107,9 +109,16 @@ Page({
       method: "POST",
       success: function (res) {
         console.log(res.data);
-
+        that.setData({
+          input_title: '',
+          imgurl:'',
+          imgss:'',
+          input_content: '',
+          evalList: [{ tempFilePaths: [], imgList: [] }],
+          tempFilePaths: [],
+        })
         if (res.data.code == 0) {
-        
+       
           that.showerweima(res.data.data);
 
 
@@ -131,7 +140,11 @@ Page({
       url: '../shoucang/shoucang',
     })
   },
-
+  towode: function () {
+    wx.navigateTo({
+      url: '../wode/wode',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

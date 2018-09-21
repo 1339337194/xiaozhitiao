@@ -5,23 +5,23 @@
         <image  src='../img/bg9.png' style='width:100%;height:60rpx;'></image>  
         <view style="z-index:999;position:absolute;margin-top:-76rpx;font-size:28rpx;margin-left:58rpx;">收藏夹</view>
     </view>
-    <input type='text' name='title'  placeholder='写个标题' class='input1' maxlength='25'></input>
+    <input type='text' name='title'  placeholder='写个标题' value='{{input_title}}' class='input1' maxlength='25'></input>
     <image src="../img/bg7.png" class="div4"></image>
     <input hidden='true'  name='url' value='{{imgurl}}'></input>
 
 
-    <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"  class="div5"></image>
+    <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"  class="div5" mode="widthFix" style="border-radius:15rpx;"></image>
         <view  wx:if="{{imgss==''}}"  bindtap="upimg"  class="educt_upload_add" >
-               <image src='../img/bg6.png' class='div5'></image>
+               <image src='../img/bg6.png' class='div5' style="height:530rpx;"></image>
           </view>
 
    <view class="row {{isRuleTrue?'hide':'show'}}" id="textareawrap" catchtap="onFocus">
     <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' 
-    class="text1"  auto-height style='z-index:0'></textarea>
+    class="text1" auto-height>{{input_content}}</textarea>
    </view>
           <view style='width:100%'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
-              <image style='width:88%;margin-top:66rpx;margin-left: 6%;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload"></image>
+              <image style='width:88%;margin-top:66rpx;margin-left: 6%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
                <!-- <input hidden='true'  name='urls[{{index}}]' value='{{evalList[0].imgList[index]}}'></input> -->
               <!-- <image style='width:30px;height:30px;margin-bottom:70px' src="../img/deltel.png" bindtap='clearImg' data-index="{{index}}" class="deltel"></image> -->
           </view>
@@ -41,9 +41,13 @@
     </view> -->
 </view>
 <view  style='position:fixed;height:120rpx;width:100%;background:#fff;bottom:0;z-index:999;'><button  class="btndatis ziti3 normal" formType="submit" style='margin-top:15rpx;color:#fff;font-size:34rpx;line-height:90rpx;height:90rpx;width:356rpx;border-radius:50rpx;'>提交</button></view>
+
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
         <view class='ZhezhaoContent' >
-            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}'>分享</button>
+            <text  style='position:absolute;margin-left:18%;margin-top:90rpx;color:#333;font-size:36rpx;line-height:90rpx;'>是否将纸条分享给好友</text>
+            <button  class="btndatis ziti3 normal" style='position:absolute;margin-top:224rpx;margin-left:13%;' bindtap='towode'>取消</button>
+            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:224rpx;margin-left:52%;'>分享
+            </button>
         </view>
     </view>
