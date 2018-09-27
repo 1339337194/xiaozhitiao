@@ -6,9 +6,9 @@
   </view>
   <view class='div1 box-shadow-3'>
     <view class='zi1'>选择任一选项即可查看小纸条</view>
-      <view  class="btn1 ziti3"  bindtap='pay' style='left:4%;background:#ffd148;border-radius:50rpx;' >
+      <!-- <view  class="btn1 ziti3"  bindtap='pay' style='left:4%;background:#ffd148;border-radius:50rpx;' >
           赏一下
-      </view>
+      </view> -->
       <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:37%'> 
       <button  class="btndatis ziti3 normal" wx:if="{{openid==null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >分 享</button>
       <button class="btndatis ziti3 normal"  wx:if="{{openid!=null}}"  open-type='share'>分 享</button>      

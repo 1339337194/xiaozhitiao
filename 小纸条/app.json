@@ -1,10 +1,11 @@
 {
   "pages":[
+    
     "pages/login/login",
     "pages/content_details/content_details",
     "pages/chaunzhitiao1/chuanzhitiao1",
   
-    "pages/watch/watch",
+  "pages/watch/watch",
     "pages/index/index",
   
   "pages/erweima/erweima",
