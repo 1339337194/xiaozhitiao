@@ -1,28 +1,37 @@
 <!--pages/content_details/content_details.wxml-->
 <view style='width:100%;position:absolute;padding-bottom:120rpx;'>
-<view class="div1" style='height:auto'>
+<view class="div1" style='height:auto;z-index:999;'>
       <image src='../img/bg13.png' class='div11'></image>
-      <view class='ziti1' auto-height style='position:relative;'>{{content.title}}</view>
-      <view bindtap='showtip' style='height:120rpx;'>
+      <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
+      <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
           <image src='../img/bg14.png' class='div12'></image>
           <text class='ziti2'>举报</text>
       </view>
 </view>
- <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;position:relative;margin-top:10rpx;margin-left:5%;border-radius:15rpx;'></image>
+
+<view class="div1" style='height:auto;position:relative;'>
+      <image src='../img/bg13.png' class='div11'></image>
+      <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
+      <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
+          <image src='../img/bg14.png' class='div12'></image>
+          <text class='ziti2'>举报</text>
+      </view>
+</view>
+ <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;margin-top:10rpx;margin-left:5%;border-radius:15rpx;' mode="widthFix"></image>
  <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
 
-<view style='width:90%;margin-left:5%;position:relative;' wx:for="{{content.urls}}">
-  <image src="{{img}}{{item}}"  wx:if="{{item!=''}}"  style='border-radius:15rpx;margin-top:25rpx;width:100%;'></image>
+<view style='width:90%;margin-left:5%;' wx:for="{{content.urls}}">
+  <image src="{{img}}{{item}}"  wx:if="{{item!=''}}"  style='border-radius:15rpx;margin-top:25rpx;width:100%;' mode="widthFix"></image>
 </view>
 <!-- <view  wx:for="{{content.urls}}">{{item}}</view> -->
-<view style='position:relative;margin-top:25rpx;margin-left:5%'>
+<view style='margin-top:25rpx;margin-left:5%'>
       <image src='../img/bg13.png' style='width:16rpx;height:49rpx;float:left;'></image>
       <text class='ziti4'>评论</text>
       <view style='clear:both'></view>
 </view>
 <view class='div2' wx:for="{{ping}}" >
     <!-- <image src='../img/bg16.png' style='width:26rpx;height:26rpx;'></image> -->
-    <view style='width:20rpx;height:20rpx;border-radius:500rpx;display:inline-block; background-color:{{usercol}};'></view>
+    <view style='width:24rpx;height:24rpx;border-radius:500rpx;display:inline-block; background-color:{{usercol}};'></view>
         <text data-pid='{{item.id}}'  bindlongtap='havesave' class='ziti5'>{{item.content}}</text>
     <view style='clear:both;'></view>
 </view>
@@ -31,23 +40,22 @@
     <action-sheet-item bindtap='showtip'>举报</action-sheet-item>
 </action-sheet>
 -->
-
+</view>
 <form bindsubmit="formSubmit">
 <view class="div3">
     <view class='div31'>
-          <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState"></textarea>
+          <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState1"  cursor-spacing="20" ></textarea>
           <view class="hide{{showView1?'':'show'}}">
                 <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
                  <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:48rpx;'></image>
                 <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
                 <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
-                <view style='position:absolute;margin-left:630rpx;margin-top:3%;'><button style="background:none;"  open-type='share'>
-                <image src="../img/bg19.png" style="width:55rpx;height:46rpx;"></image>
+                <view style='position:absolute;margin-left:85%;' class=" {{isIphone5?'ipx-bottom': 'ipx1-bottom'}}"><button style="background:none;"  open-type='share'>
+                <image src="../img/bg19.png" style="width:54rpx;height:46rpx;"></image>
                 </button>
                 </view>    
           </view>
-           <view style='position:absolute;margin-left:610rpx;margin-top:30rpx;' class="hide{{showView1?'show':''}}" > <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;' formType="submit">发表</button></view>
+          <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;position:absolute;margin-left:610rpx;margin-top:36rpx;width:106rpx;height:55rpx;line-height:55rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
     </view>
 </view>
 </form>
-</view>

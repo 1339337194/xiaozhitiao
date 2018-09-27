@@ -40,6 +40,22 @@ App({
     nick: null,
     avataurl: null,
     url: 'https://www.donewthing.com/index.php/v1/',
-    imgurl: 'https://www.donewthing.com'
+    imgurl: 'https://www.donewthing.com',
+    isIphone5: false,
+    userInfo: null
+  },
+  onShow: function () {
+    let that = this;
+    wx.getSystemInfo({
+      success: res => {
+        // console.log('手机信息res'+res.model)
+        let modelmes = res.model;
+        if (modelmes.search('iPhone 5') != -1) {
+          that.globalData.isIphone5 = true
+        }
+
+      }
+    })
+
   }
 })

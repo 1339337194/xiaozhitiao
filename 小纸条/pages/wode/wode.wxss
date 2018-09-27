@@ -24,7 +24,7 @@ page{background: #f1f1f1;}
 .div{
   width: 100%;
   position:fixed;
-  height: 110rpx;
+  height: 105rpx;
   background: #f1f1f1;
   z-index: 100;
 }

@@ -2,7 +2,7 @@ page{background: #f1f1f1;}
 .div{
   width: 100%;
   position:fixed;
-  height: 110rpx;
+  height: 105rpx;
   background: #f1f1f1;
   z-index: 100;
 }
@@ -68,8 +68,8 @@ page{background: #f1f1f1;}
 }
 .div23{
   position: absolute;
-  right: 5%;
-  top: 54%;
+  right: 6%;
+  top: 57%;
   font-size: 18rpx;
   font-family: simsun;
   color: #8c8780;

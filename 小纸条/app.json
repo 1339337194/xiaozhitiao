@@ -2,8 +2,10 @@
   "pages":[
     
     "pages/login/login",
-    "pages/content_details/content_details",
     "pages/chaunzhitiao1/chuanzhitiao1",
+    "pages/content_details/content_details",
+
+
   
   "pages/watch/watch",
     "pages/index/index",

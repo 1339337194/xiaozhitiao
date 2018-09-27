@@ -13,7 +13,7 @@ Page({
     content:'',
     shou:0,
     usercol:'',
-    showView1:false
+    showView1:false,
   },
   showtip:function(){
     var that=this;
@@ -58,14 +58,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-   
-
-
+    let isIphone5 = app.globalData.isIphone5;
+    this.setData({
+      isIphone5: isIphone5
+    })
     showView: (options.showView == "true" ? true : false)
   },
   onLoad: function (option) {
-
+    let isIphone5 = app.globalData.isIphone5;
+    this.setData({
+      isIphone5: isIphone5
+    })
     console.log(option.id)
 
     var that = this;
@@ -263,7 +266,12 @@ Page({
       showView1: (!this.data.showView1)
     })
   },
-
+  onChangeShowState1: function () {
+    var that = this;
+    that.setData({
+      showView1: false
+    })
+  },
   fanhui: function () {
     wx.redirectTo({
       url: "/pages/wode/wode"
