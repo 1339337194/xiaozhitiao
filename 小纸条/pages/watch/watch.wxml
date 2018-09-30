@@ -1,8 +1,8 @@
-<!--pages/watch/watch.wxml-->
+
 
 <view class='wrap'>
  <view class="div11  hide{{showView?'':'show'}} box-shadow-6" style='background-image: url("{{image}}");'>
-        <text class="ziti11">{{title}}</text>
+        <view class="ziti11" style='text-shadow:0rpx 0rpx 30rpx #000;'>{{title}}</view>
   </view>
   <view class='div1 box-shadow-3'>
     <view class='zi1'>选择任一选项即可查看小纸条</view>

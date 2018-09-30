@@ -25,7 +25,7 @@
 </view>
 <!-- <view  wx:for="{{content.urls}}">{{item}}</view> -->
 <view style='margin-top:25rpx;margin-left:5%'>
-      <image src='../img/bg13.png' style='width:16rpx;height:49rpx;float:left;'></image>
+      <image src='../img/bg13.png' style='width:4rpx;height:49rpx;float:left;'></image>
       <text class='ziti4'>评论</text>
       <view style='clear:both'></view>
 </view>
@@ -47,7 +47,7 @@
           <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState1"  cursor-spacing="20" ></textarea>
           <view class="hide{{showView1?'':'show'}}">
                 <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
-                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:48rpx;'></image>
+                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:50rpx;'></image>
                 <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
                 <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
                 <view style='position:absolute;margin-left:85%;' class=" {{isIphone5?'ipx-bottom': 'ipx1-bottom'}}"><button style="background:none;"  open-type='share'>
@@ -55,7 +55,7 @@
                 </button>
                 </view>    
           </view>
-          <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;position:absolute;margin-left:610rpx;margin-top:36rpx;width:106rpx;height:55rpx;line-height:55rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
+          <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;position:absolute;margin-left:610rpx;margin-top:30rpx;width:106rpx;height:60rpx;line-height:60rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
     </view>
 </view>
 </form>

@@ -21,7 +21,7 @@ button::after {
   background: #fff;
 }
 .div11{
-  width:16rpx;height:66rpx;position:absolute;left:5%;margin-top:30rpx;
+  width:8rpx;height:66rpx;position:absolute;left:5%;margin-top:30rpx;
 }
 .ziti1{
   font-size:60rpx;font-color:#302f32;margin-left:10%;margin-top:20rpx;
@@ -45,7 +45,7 @@ float:left;
   font-size:30rpx;color:#000000;line-height:49rpx;font-family:simsun;margin-left:15rpx;float:left;
 }
 .div2{
-  margin:25rpx 0;margin-left:5%;width:90%;
+  margin:25rpx 0;margin-left:4%;width:90%;
 }
 .ziti5{
   font-size:28rpx;color:#000000;font-family:simsun;
@@ -62,7 +62,7 @@ float:left;
  margin-top: 2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:116rpx !important;width:100%;
 }
 .input1{
-  background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:30rpx;padding:14rpx;line-height: 56rpx;
+  background:#f1f0ef;position:absolute;height:56rpx;width:536rpx;margin-left:30rpx;margin-top:17rpx;border-radius:50rpx;padding:14rpx 16rpx;line-height: 56rpx;
   word-wrap: break-word; break-word: break-all;
 }
 .div32{
