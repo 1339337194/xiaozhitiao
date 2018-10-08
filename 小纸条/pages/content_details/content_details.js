@@ -433,9 +433,9 @@ Page({
         console.log(res.data);
 
         if (res.data.code == 0) {
-          // wx.redirectTo({
-          //   url: "/pages/content_details/content_details"
-          // })
+          wx.redirectTo({
+            url: "/pages/content_details/content_details?id=" + that.data.content.id
+          })
         }else{
           wx.showModal({
             title: '提示',
