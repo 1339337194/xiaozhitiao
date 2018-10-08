@@ -31,7 +31,8 @@ Page({
     wx.request({
       url: app.globalData.url + 'index/gettiao', //仅为示例，并非真实的接口地址
       data: {
-        id: options.id
+        id: options.id,
+        openid: app.globalData.openid
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -50,7 +51,12 @@ Page({
           })
          
 
+        }else{
+ wx.navigateTo({
+   url: "/pages/content_details/content_details?id=" + res.data.code
+        })
         }
+       
       }
     })
     wx.request({
@@ -314,9 +320,26 @@ Page({
       success: function (res) {
         // 转发成功
         console.log("转发成功");
-        wx.navigateTo({
-          url: "/pages/content_details/content_details?id=" + that.data.id
+
+        wx.request({
+          url: app.globalData.url + 'index/zlogs', //仅为示例，并非真实的接口地址
+          data: {
+            zhiid: that.data.id,
+            openid: app.globalData.openid
+          },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: "POST",
+          success: function (res) {
+            console.log(res.data);
+            wx.navigateTo({
+              url: "/pages/content_details/content_details?id=" + that.data.id
+            })
+          }
         })
+
+
 
       },
       fail: function (res) {

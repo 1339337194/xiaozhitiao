@@ -40,14 +40,14 @@
           <text bindlongtap="formSubmit" class='zi3'>分享给好友</text>
     </view> -->
 </view>
-<view  style='position:fixed;height:120rpx;width:100%;background:#fff;bottom:0;z-index:999;'><button  class="btndatis ziti3 normal" formType="submit" style='margin-top:15rpx;color:#fff;font-size:34rpx;line-height:90rpx;height:90rpx;width:356rpx;border-radius:50rpx;'>提交</button></view>
+<view  style='position:fixed;height:120rpx;width:100%;background:#fff;bottom:0;'><button  class="btndatis ziti3 normal" formType="submit" style='margin:0 auto;margin-top:15rpx;color:#fff;font-size:34rpx;line-height:90rpx;height:90rpx;width:356rpx;border-radius:50rpx;'>提交</button></view>
 
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
-        <view class='ZhezhaoContent' >
-            <text  style='position:absolute;margin-left:18%;margin-top:90rpx;color:#333;font-size:36rpx;line-height:90rpx;'>是否将纸条分享给好友</text>
-            <button  class="btndatis ziti3 normal" style='position:absolute;margin-top:224rpx;margin-left:13%;' bindtap='towode'>取消</button>
-            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:224rpx;margin-left:52%;'>分享
+        <view class='ZhezhaoContent box-shadow-3' >
+            <text  style='position:absolute;margin-left:18%;margin-top:76rpx;color:#333;font-size:36rpx;line-height:90rpx;'>提交成功,是否分享给好友</text>
+            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:220rpx;margin-left:13%;'>分享
             </button>
+            <button  class="btndatis ziti3 normal" style='position:absolute;margin-top:220rpx;margin-left:52%;' bindtap='towode'>取消</button>
         </view>
     </view>

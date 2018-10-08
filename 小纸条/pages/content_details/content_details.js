@@ -14,7 +14,31 @@ Page({
     shou:0,
     usercol:'',
     showView1:false,
+    user:0,
+    isRuleTrue: false,
+    modalHidden: true
   },
+
+
+  buttonTap: function () {
+    this.setData({
+      modalHidden: false
+    })
+  },
+  modalCandel: function () {
+    // do something
+    this.setData({
+      modalHidden: true
+    })
+  },
+  modalConfirm: function () {
+    // do something
+    this.setData({
+      modalHidden: true
+    })
+  },
+
+  
   showtip:function(){
     var that=this;
     wx.showModal({
@@ -54,6 +78,31 @@ Page({
       }
     })
   },
+  erwei: function () {
+    var that = this;
+    // wx.request({
+    //   url: 'https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=' + app.globalData.token,
+    //   data: { 'path': "pages/watch/watch?id=1", 'width': 430 },
+    //   header: {
+    //     'content-type': 'application/json'
+    //   },
+    //   method: "POST",
+    //   success: function (res) {
+    //     console.log(res.data)
+    //   },
+    //   fail: function (res) {
+    //     console.log('isFail')
+    //   }
+    // })
+
+    that.showerweima();
+  },
+  showerweima: function () {
+    var that = this;
+    this.setData({
+      isRuleTrue: true,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -90,7 +139,11 @@ Page({
           that.setData({
             content: res.data.data
           })
-
+          if (res.data.data.openid == app.globalData.openid){
+            that.setData({
+              user:1
+            })
+          }
         }
       }
     })
@@ -295,13 +348,25 @@ Page({
       method: "POST",
       success: function (res) {
         console.log(res.data.data);
-
         if (res.data.code == 0) {
           that.setData({
-          shou:1
+            shou: 1
           })
 
         }
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '收藏成功',
+          success: function (res) {
+            if (res.confirm) {
+           
+            } else if (res.cancel) {
+             
+            }
+          }
+        })
+      
       }
     })
   },

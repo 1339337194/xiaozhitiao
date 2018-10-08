@@ -1,5 +1,7 @@
 /* pages/watch/watch.wxss */
-
+button::after{
+border:none;
+}
 /*四边同色阴影扩展*/
 .is_checked{
   background:#fff;
@@ -47,7 +49,6 @@
   display: block;
  margin-left: 35rpx;
  margin-top: 35rpx;
- text-shadow:5px 5px 30px #000000;
  padding:10rpx;
 }
 .div1{

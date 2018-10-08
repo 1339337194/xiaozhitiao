@@ -1,6 +1,15 @@
 <!--pages/content_details/content_details.wxml-->
 <view style='width:100%;position:absolute;padding-bottom:120rpx;'>
-<view class="div1" style='height:auto;z-index:999;'>
+<!-- <view class="div1" style='height:auto;z-index:999;'>
+      <image src='../img/bg13.png' class='div11'></image>
+      <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
+      <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
+          <image src='../img/bg14.png' class='div12'></image>
+          <text class='ziti2'>举报</text>
+      </view>
+</view> -->
+
+<view class="div1" wx:if="{{shou==0&&user==0}}" style='height:auto;position:relative;'>
       <image src='../img/bg13.png' class='div11'></image>
       <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
       <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
@@ -9,14 +18,16 @@
       </view>
 </view>
 
-<view class="div1" style='height:auto;position:relative;'>
+<view class="div1" wx:if="{{shou==1||user==1}}" style='height:auto;position:relative;'>
       <image src='../img/bg13.png' class='div11'></image>
       <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
-      <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
-          <image src='../img/bg14.png' class='div12'></image>
-          <text class='ziti2'>举报</text>
+      <view bindtap='buttonTap' style='height:120rpx;margin-left:92%;'>
+          <image src='../img/bg25.jpg' class='div12'></image>
+         
       </view>
 </view>
+
+
  <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;margin-top:10rpx;margin-left:5%;border-radius:15rpx;' mode="widthFix"></image>
  <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
 
@@ -25,7 +36,7 @@
 </view>
 <!-- <view  wx:for="{{content.urls}}">{{item}}</view> -->
 <view style='margin-top:25rpx;margin-left:5%'>
-      <image src='../img/bg13.png' style='width:16rpx;height:49rpx;float:left;'></image>
+      <image src='../img/bg13.png' style='width:4rpx;height:49rpx;float:left;'></image>
       <text class='ziti4'>评论</text>
       <view style='clear:both'></view>
 </view>
@@ -47,7 +58,7 @@
           <textarea  placeholder='发表评论...' name='content' class='input1' maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState1"  cursor-spacing="20" ></textarea>
           <view class="hide{{showView1?'':'show'}}">
                 <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
-                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:48rpx;'></image>
+                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32' style='height:46rpx;width:50rpx;'></image>
                 <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
                 <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
                 <view style='position:absolute;margin-left:85%;' class=" {{isIphone5?'ipx-bottom': 'ipx1-bottom'}}"><button style="background:none;"  open-type='share'>
@@ -55,7 +66,18 @@
                 </button>
                 </view>    
           </view>
-          <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;position:absolute;margin-left:610rpx;margin-top:36rpx;width:106rpx;height:55rpx;line-height:55rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
+          <button style='font-size:22rpx;background:#ffd249;border-radius:50rpx;color:#000;position:absolute;margin-left:610rpx;margin-top:30rpx;width:106rpx;height:60rpx;line-height:60rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
     </view>
 </view>
 </form>
+
+<!-- <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
+        <view class='ZhezhaoContent box-shadow-3' >
+            <text  style='position:absolute;margin-left:18%;margin-top:76rpx;color:#333;font-size:36rpx;line-height:90rpx;'>提交成功,是否分享给好友</text>
+            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:220rpx;margin-left:13%;'>分享
+            </button>
+            <button  class="btndatis ziti3 normal" style='position:absolute;margin-top:220rpx;margin-left:52%;' bindtap='towode'>取消</button>
+        </view>
+    </view> -->
+
+     <modal title="分享小纸条" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel"> <view> <image class="image" style='height:200px;width:200px;' src="{{img}}{{content.erwei}}" mode='aspectFill'></image> </view></modal>

@@ -42,7 +42,8 @@ App({
     url: 'https://www.donewthing.com/index.php/v1/',
     imgurl: 'https://www.donewthing.com',
     isIphone5: false,
-    userInfo: null
+    userInfo: null,
+    token:'14_biF7Tqq4hKouCsF55E3zXgU2vZbGPEZTODy09H70iuZL1m4-tE7ANn1iHwF0z2aQPpx9kwuty8XZU9Rwidf8AgbL-LD2BDGOWKzMkM20htYpm24j6Mv2mHkBsK94zxGZf2ZMlT6Lge42JkQLTFIdAFAZLO'
   },
   onShow: function () {
     let that = this;
