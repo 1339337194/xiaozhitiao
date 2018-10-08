@@ -80,4 +80,4 @@
         </view>
     </view> -->
 
-     <modal title="分享小纸条" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel"> <view> <image class="image" style='height:200px;width:200px;' src="{{img}}{{content.erwei}}" mode='aspectFill'></image> </view></modal>
+     <modal title="分享小纸条" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel"> <view> <image class="image" style='height:500rpx;width:500rpx;' src="{{img}}{{content.erwei}}" mode='aspectFill'></image> </view></modal>
