@@ -108,15 +108,19 @@ Page({
    */
   onLoad: function (options) {
     let isIphone5 = app.globalData.isIphone5;
+    let isIphoneX = app.globalData.isIphoneX;
     this.setData({
-      isIphone5: isIphone5
+      isIphone5: isIphone5,
+      isIphoneX: isIphoneX
     })
     showView: (options.showView == "true" ? true : false)
   },
   onLoad: function (option) {
     let isIphone5 = app.globalData.isIphone5;
+    let isIphoneX = app.globalData.isIphoneX;
     this.setData({
-      isIphone5: isIphone5
+      isIphone5: isIphone5,
+      isIphoneX: isIphoneX
     })
     console.log(option.id)
 
@@ -357,7 +361,7 @@ Page({
         wx.showModal({
           title: '提示',
           showCancel: false,
-          content: '收藏成功',
+          content: '已收藏',
           success: function (res) {
             if (res.confirm) {
            
@@ -437,18 +441,18 @@ Page({
             url: "/pages/content_details/content_details?id=" + that.data.content.id
           })
         }else{
-          wx.showModal({
-            title: '提示',
-            showCancel: false,
-            content: '最多评论五条',
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
-            }
-          })
+          // wx.showModal({
+          //   title: '提示',
+          //   showCancel: false,
+          //   content: '最多评论五条',
+          //   success: function (res) {
+          //     if (res.confirm) {
+          //       console.log('用户点击确定')
+          //     } else if (res.cancel) {
+          //       console.log('用户点击取消')
+          //     }
+          //   }
+          // })
         }
       }
     })

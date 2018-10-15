@@ -10,12 +10,12 @@ Page({
     img: app.globalData.imgurl
   },
   fanhui: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: "/pages/chaunzhitiao1/chuanzhitiao1"
     })
   },
   shou: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: "/pages/shoucang/shoucang"
     })
   },
@@ -80,7 +80,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    wx.redirectTo({
+      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+    })
   },
 
   /**

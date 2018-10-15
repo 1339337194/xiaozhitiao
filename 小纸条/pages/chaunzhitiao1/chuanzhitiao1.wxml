@@ -1,5 +1,5 @@
 <form bindsubmit="formSubmit">
-<view class='wrap'>
+<view class="{{isIphoneX?'box5': 'wrap'}}">
     <image src="../img/bg5.png" class="div1"></image>
     <view bindtap='div1click' style='width:166rpx;height:60rpx;float:right;margin-right:30rpx;margin-top:20rpx;line-height:60rpx;font-size:28rpx;'>
         <image  src='../img/bg9.png' style='width:100%;height:60rpx;'></image>  
@@ -12,14 +12,14 @@
 
     <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"  class="div5" mode="widthFix" style="border-radius:15rpx;"></image>
         <view  wx:if="{{imgss==''}}"  bindtap="upimg"  class="educt_upload_add" >
-               <image src='../img/bg6.png' class='div5' style="height:530rpx;"></image>
+               <image src='../img/bg6.png' class='div5' style="height:500rpx;"></image>
           </view>
 
    <view class="row {{isRuleTrue?'hide':'show'}}" id="textareawrap" catchtap="onFocus">
     <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' 
     class="text1" auto-height>{{input_content}}</textarea>
    </view>
-          <view style='width:100%'>
+          <view style='width:100%;'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
               <image style='width:88%;margin-top:66rpx;margin-left: 6%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
                <!-- <input hidden='true'  name='urls[{{index}}]' value='{{evalList[0].imgList[index]}}'></input> -->
@@ -27,8 +27,8 @@
           </view>
 </view>
 
-          <view style='width:210rpx;margin-left:2%;' class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}">
-             <image  src='../img/bg24.jpg' class='div6'></image>
+          <view  class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}" style='display:none;'>
+             <image  src='../img/bg99.png' class='div6'></image>
 
 
           </view>
@@ -40,7 +40,7 @@
           <text bindlongtap="formSubmit" class='zi3'>分享给好友</text>
     </view> -->
 </view>
-<view  style='position:fixed;height:120rpx;width:100%;background:#fff;bottom:0;'><button  class="btndatis ziti3 normal" formType="submit" style='margin:0 auto;margin-top:15rpx;color:#fff;font-size:34rpx;line-height:90rpx;height:90rpx;width:356rpx;border-radius:50rpx;'>提交</button></view>
+<view  class="{{isIphoneX?'box2': 'box1'}}"><button  class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}" formType="submit">分享给好友</button></view>
 
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>

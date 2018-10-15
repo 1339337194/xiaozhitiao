@@ -1,4 +1,5 @@
 // pages/watch/watch.js
+
 const app = getApp()
 Page({
 
@@ -8,6 +9,7 @@ Page({
   data: {
     isChecked: false,
     showView: false,
+    state: false,
     data:
       [{ img: 12, option: 'A', optionname: "a的数据"},
       { img: 12, option: 'B', optionname: "b的数据" },
@@ -125,15 +127,17 @@ Page({
     });
 
   },
+ 
   change:function(){
     var that = this;
     this.setData({
       isChecked: true,
-       showView:true
+      state: true,
+       showView:true,
     })
 
   },
-
+  
 
   /*
  调起微信支付
@@ -296,7 +300,18 @@ Page({
                    img4: 26,
                  })
                }
-
+               wx.showModal({
+                 title: '提示',
+                 showCancel: false,
+                 content: '答案错误',
+                 success: function (res) {
+                   if (res.confirm) {
+                     console.log('用户点击确定')
+                   } else if (res.cancel) {
+                     console.log('用户点击取消')
+                   }
+                 }
+               })
              }
           }
         })
@@ -353,6 +368,7 @@ Page({
   },
 
    getUserInfo: function (e) {
+     app.slideupshow(this, 'slide_up1', -200, 0.5)
      var that = this;
     wx.login({
       success: function (res) {

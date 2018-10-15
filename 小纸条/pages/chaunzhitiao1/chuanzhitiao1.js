@@ -76,13 +76,18 @@ Page({
 
   onShareAppMessage: function (e) {
     console.log(this.data.title)
-
-
+    console.log(this.data.gsimg)
+    if (this.data.gsimg =='https://www.donewthing.comnull'){
+      var img = '../img/bg98.jpg'
+    }else{
+      var img = this.data.gsimg
+    }
+    
    
     return {
       title: this.data.title,
       path: '/pages/watch/watch?id=' + e.target.dataset.id,
-      imageUrl: this.data.gsimg,
+      imageUrl: img //this.data.gsimg,
     }
 
   
@@ -93,6 +98,23 @@ Page({
     console.log(e.detail.value)
     var evalList = that.data.evalList;
    // var imgs = evalList[0].imgList;
+
+    if (e.detail.value.title == '') {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '请填写内容',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return
+    }
+
     wx.request({
       url: app.globalData.url + 'index/addzhi', //仅为示例，并非真实的接口地址
       data: {
@@ -133,7 +155,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let isIphoneX = app.globalData.isIphoneX;
+    this.setData({
+      isIphoneX: isIphoneX
+    })
   },
   div1click:function(){
     wx.navigateTo({
@@ -358,6 +383,7 @@ Page({
   upimg: function () {
     var that = this;
     wx.chooseImage({
+      count: 1,
       success: function (res) {
         var data = {
           program_id: app.jtappid

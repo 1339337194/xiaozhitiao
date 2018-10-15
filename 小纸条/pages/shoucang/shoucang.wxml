@@ -8,7 +8,7 @@
 <view class="wrap"> 
    <view class='div2' bindtap='xiang' data-id='{{item.id}}' wx:for="{{zhi}}">
     <view>
-         <image src="{{img}}{{item.url}}" class='div21'></image>
+         <view class='div21' style='overflow:hidden;'><image src="{{img}}{{item.url}}" style='width:100%;'></image></view>
          <text class='div22'>{{item.title}}</text>
          <text class='div23'>{{item.intime}}</text>
          </view>

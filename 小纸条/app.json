@@ -1,12 +1,9 @@
 {
   "pages":[
-    
-    "pages/login/login",
     "pages/watch/watch",
-  
-    "pages/chaunzhitiao1/chuanzhitiao1",
+    "pages/login/login",
     "pages/content_details/content_details",
-
+    "pages/chaunzhitiao1/chuanzhitiao1",
     "pages/index/index",
   
   "pages/erweima/erweima",

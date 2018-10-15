@@ -23,6 +23,7 @@ Page({
  
   wode: function () {
     wx.navigateTo({
+
       url: "/pages/wode/wode"
     })
   },

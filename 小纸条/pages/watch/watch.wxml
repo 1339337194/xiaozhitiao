@@ -1,17 +1,17 @@
 <!--pages/watch/watch.wxml-->
 
-<view class='wrap'>
- <view class="div11  hide{{showView?'':'show'}} box-shadow-6" style='background-image: url("{{image}}");'>
+<view class='wrap box-shadow-3'>
+ <view class="div11  {{state?'open':''}}"  style='background-image: url("{{image}}");'>
         <text class="ziti11">{{title}}</text>
   </view>
-  <view class='div1 box-shadow-3'>
+  <view class="div1">
     <view class='zi1'>选择任一选项即可查看小纸条</view>
       <!-- <view  class="btn1 ziti3"  bindtap='pay' style='left:4%;background:#ffd148;border-radius:50rpx;' >
           赏一下
       </view> -->
-      <view  class="btn1 ziti3"  style='background-image:url("../img/bg3.png");left:37%'> 
-      <button  class="btndatis ziti3 normal" wx:if="{{openid==null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >分 享</button>
-      <button class="btndatis ziti3 normal"  wx:if="{{openid!=null}}"  open-type='share'>分 享</button>      
+      <view  class="btn1 ziti3"  style='left:13%'> 
+      <button  class="btndatis ziti3 normal" wx:if="{{openid==null}}" open-type="getUserInfo"  animation="{{slide_up1}}"  bindgetuserinfo="getUserInfo" hover-class='normal2'>分 享</button>
+      <button class="btndatis ziti3 normal"  wx:if="{{openid!=null}}"  open-type='share' hover-class='normal2'>分 享</button>      
       </view>
        <button wx:if="{{openid==null}}"  class="btndati ziti3 {{isChecked?'is_checked':'normal'}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >答 题</button>
       <view  wx:if="{{openid!=null}}"  class="btndati ziti3 {{isChecked?'is_checked':'normal'}}"   bindtap='change'>答 题</view>
