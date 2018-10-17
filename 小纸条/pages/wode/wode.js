@@ -15,7 +15,7 @@ Page({
     })
   },
   shou: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: "/pages/shoucang/shoucang"
     })
   },

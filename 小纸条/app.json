@@ -1,11 +1,11 @@
 {
   "pages":[
-    "pages/watch/watch",
+    "pages/chaunzhitiao1/chuanzhitiao1",
     "pages/login/login",
     "pages/content_details/content_details",
-    "pages/chaunzhitiao1/chuanzhitiao1",
+   
     "pages/index/index",
-  
+  "pages/watch/watch",
   "pages/erweima/erweima",
    "pages/shoucang/shoucang",
     "pages/wode/wode",

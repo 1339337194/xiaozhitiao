@@ -1,9 +1,10 @@
 <form bindsubmit="formSubmit">
 <view class="{{isIphoneX?'box5': 'wrap'}}">
     <image src="../img/bg5.png" class="div1"></image>
-    <view bindtap='div1click' style='width:166rpx;height:60rpx;float:right;margin-right:30rpx;margin-top:20rpx;line-height:60rpx;font-size:28rpx;'>
+    <view style='width:166rpx;height:60rpx;float:right;margin-right:30rpx;line-height:60rpx;margin-top:20rpx;font-size:28rpx;'>
         <image  src='../img/bg9.png' style='width:100%;height:60rpx;'></image>  
-        <view style="z-index:999;position:absolute;margin-top:-76rpx;font-size:28rpx;margin-left:58rpx;">收藏夹</view>
+        <view  bindtap='div1click'  wx:if="{{openid!=null}}" style="z-index:999;position:absolute;margin-top:-76rpx;font-size:28rpx;margin-left:58rpx;">收藏夹</view>
+         <button  wx:if="{{openid==null}}" style="z-index:999;position:absolute;margin-top:-77rpx;font-size:28rpx;margin-left:58rpx;width:86rpx;height:50rpx;line-height:62rpx;padding:0;"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">收藏夹</button>
     </view>
     <input type='text' name='title'  placeholder='写个标题' value='{{input_title}}' class='input1' maxlength='25'></input>
     <image src="../img/bg7.png" class="div4"></image>
@@ -15,19 +16,23 @@
                <image src='../img/bg6.png' class='div5' style="height:500rpx;"></image>
           </view>
 
-   <view class="row {{isRuleTrue?'hide':'show'}}" id="textareawrap" catchtap="onFocus">
-    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧" name='content'  maxlength='5000' 
+   <view class="row {{isRuleTrues?'hide':'show'}}" id="textareawrap" >
+    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧"  bindinput='texts' name='content'  maxlength='5000' 
     class="text1" auto-height>{{input_content}}</textarea>
    </view>
           <view style='width:100%;'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
-              <image style='width:88%;margin-top:66rpx;margin-left: 6%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
+              <image  style='width:88%;margin-top:66rpx;margin-left: 6%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
+               <view class="row {{b[index]?'hide':'show'}}" id="textareawrap" >
+                <textarea  placeholder="说点话吧" data-id='{{index}}' bindinput='text' name="contents{{index}}"  maxlength='5000' 
+    class="text1" auto-height></textarea>
+      </view>
                <!-- <input hidden='true'  name='urls[{{index}}]' value='{{evalList[0].imgList[index]}}'></input> -->
               <!-- <image style='width:30px;height:30px;margin-bottom:70px' src="../img/deltel.png" bindtap='clearImg' data-index="{{index}}" class="deltel"></image> -->
           </view>
 </view>
 
-          <view  class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}" style='display:none;'>
+          <view wx:if="{{imgss!=''}}"  class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}" style=''>
              <image  src='../img/bg99.png' class='div6'></image>
 
 
@@ -40,14 +45,16 @@
           <text bindlongtap="formSubmit" class='zi3'>分享给好友</text>
     </view> -->
 </view>
-<view  class="{{isIphoneX?'box2': 'box1'}}"><button  class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}" formType="submit">分享给好友</button></view>
+<view  class="{{isIphoneX?'box2': 'box1'}}"><button  wx:if="{{openid!=null}}" class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}" formType="submit">分享给好友</button>
+ <button  wx:if="{{openid==null}}"  class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 分享给好友 </button>
+</view>
 
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
         <view class='ZhezhaoContent box-shadow-3' >
             <text  style='position:absolute;margin-left:18%;margin-top:76rpx;color:#333;font-size:36rpx;line-height:90rpx;'>提交成功,是否分享给好友</text>
-            <button  class="btndatis ziti3 normal" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:220rpx;margin-left:13%;'>分享
+            <button  class="btndatis1 ziti31 normal1" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:220rpx;margin-left:13%;'>分享
             </button>
-            <button  class="btndatis ziti3 normal" style='position:absolute;margin-top:220rpx;margin-left:52%;' bindtap='towode'>取消</button>
+            <button  class="btndatis1 ziti31 normal1" style='position:absolute;margin-top:220rpx;margin-left:52%;' bindtap='towode'>取消</button>
         </view>
     </view>

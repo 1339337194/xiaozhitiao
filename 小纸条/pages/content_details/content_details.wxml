@@ -31,8 +31,9 @@
  <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;margin-top:10rpx;margin-left:5%;border-radius:15rpx;' mode="widthFix"></image>
  <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
 
-<view style='width:90%;margin-left:5%;' wx:for="{{content.urls}}">
+<view style='width:90%;margin-left:5%;' wx:for="{{content.urls}}" data-index="{{index}}">
   <image src="{{img}}{{item}}"  wx:if="{{item!=''}}"  style='border-radius:15rpx;margin-top:25rpx;width:100%;' mode="widthFix"></image>
+  <view class='ziti3' style='margin-top:5rpx;'>{{jj[index]}}</view>
 </view>
 <!-- <view  wx:for="{{content.urls}}">{{item}}</view> -->
 <view style='margin-top:25rpx;margin-left:5%'>

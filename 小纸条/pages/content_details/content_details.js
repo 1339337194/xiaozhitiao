@@ -16,7 +16,8 @@ Page({
     showView1:false,
     user:0,
     isRuleTrue: false,
-    modalHidden: true
+    modalHidden: true,
+    jj:[]
   },
 
 
@@ -141,7 +142,8 @@ Page({
 
         if (res.data.code == 0) {
           that.setData({
-            content: res.data.data
+            content: res.data.data,
+            jj: res.data.data.jj
           })
           if (res.data.data.openid == app.globalData.openid){
             that.setData({

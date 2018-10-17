@@ -1,7 +1,7 @@
 <!--pages/watch/watch.wxml-->
 
 <view class='wrap box-shadow-3'>
- <view class="div11  {{state?'open':''}}"  style='background-image: url("{{image}}");'>
+ <view class="{{showView?'div12':'div11'}} {{state?'open':'down'}}"  style='background-image: url("{{image}}");'>
         <text class="ziti11">{{title}}</text>
   </view>
   <view class="div1">

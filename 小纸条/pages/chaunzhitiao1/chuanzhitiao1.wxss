@@ -1,4 +1,23 @@
 /* pages/chaunzhitiao1/chuanzhitiao1.wxss */
+.ziti31 {
+color:#fff;
+font-size:30rpx;
+text-align:center;
+}
+.normal1{
+  background: #ffd149;
+  color:#fff;
+font-size:34rpx;
+line-height:70rpx;
+
+}
+.btndatis1{
+   width: 190rpx;
+  height: 70rpx;
+ border-radius: 35rpx;
+
+}
+
 .box1{
   position:fixed;height:120rpx;width:100%;background:#fff;bottom:0;
 }
@@ -85,7 +104,10 @@ font-size:34rpx;color:#333;width: 100%;
   z-index:10;
 
 }
-
+button::after{border:0}
+button {
+  background-color: #f1f0ef;
+}
 .Zhezhao{
     height: 100%;
     width: 100%;

@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    input_contents:'',
+  a:[],
+    b: [],
     id:'',
     array: '',
     index: 0,
@@ -14,6 +16,7 @@ Page({
     classname: '',
     onOff: true,
     isRuleTrue: false,
+    isRuleTrues: false,
     name: '',
     content: '',
     user: '',
@@ -95,6 +98,7 @@ Page({
  
   formSubmit: function (e) {
     var that = this;
+   // console.log( JSON.stringfy(e.detail.value) )
     console.log(e.detail.value)
     var evalList = that.data.evalList;
    // var imgs = evalList[0].imgList;
@@ -103,7 +107,7 @@ Page({
       wx.showModal({
         title: '提示',
         showCancel: false,
-        content: '请填写内容',
+        content: '请填写标题',
         success: function (res) {
           if (res.confirm) {
             console.log('用户点击确定')
@@ -113,7 +117,7 @@ Page({
         }
       })
       return
-    }
+            }
 
     wx.request({
       url: app.globalData.url + 'index/addzhi', //仅为示例，并非真实的接口地址
@@ -123,11 +127,13 @@ Page({
         content: e.detail.value.content,
         imgs: evalList[0].imgList,
         openid: app.globalData.openid,
+        jsons: e.detail.value 
       },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
+      // header: {
+      //   "Content-Type": "application/x-www-form-urlencoded"
        
-      },
+      // },
+      header: { 'Content-Type': 'application/json' },
       method: "POST",
       success: function (res) {
         console.log(res.data);
@@ -149,16 +155,84 @@ Page({
     })
 
   },
+  text: function (event) {
+    var that=this
+    console.log(event.target.dataset.id);
+    console.log(event.detail.value);
+    //var a = event.target.dataset.id
+    that.data.a[event.target.dataset.id] = event.detail.value
+    //that.data.b[event.target.dataset.id] =0
+    var ass=that.data.a
+   // var bs = that.data.b
+    this.setData({
+      a: ass,
+     //   b:bs
+    })
+    console.log(this.data.a);
+    
+  },
+  texts: function (event) {
+ 
+  
 
+    this.setData({
+      input_contents: event.detail.value
 
+    })
+   
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     let isIphoneX = app.globalData.isIphoneX;
     this.setData({
-      isIphoneX: isIphoneX
+      isIphoneX: isIphoneX,
+      
     })
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        console.log(code)
+        wx.getUserInfo({
+          success: function (res) {
+            var userNick = res.userInfo.nickName;//用户昵称
+            var avataUrl = res.userInfo.avatarUrl;//用户头像地址
+            var gender = res.userInfo.gender;//用户性别
+
+            wx.request({
+              url: app.globalData.url + 'index/getuser',//服务器的地址，现在微信小程序只支持https请求，所以调试的时候请勾选不校监安全域名
+              data: {
+                code: code,
+                nick: userNick,
+                avaurl: avataUrl,
+
+              },
+              header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              method: "POST",
+              success: function (res) {
+                app.globalData.openid = res.data.data,
+                  app.globalData.nick = userNick,
+                  app.globalData.avataurl = avataUrl,
+                  console.log(app.globalData.nick);
+                that.setData({
+                  openid: app.globalData.openid
+                })
+                // wx.navigateTo({
+                //   url: "/pages/chaunzhitiao1/chuanzhitiao1"
+                // })
+              }
+            })
+
+
+
+          }
+        });
+      }
+    });
   },
   div1click:function(){
     wx.navigateTo({
@@ -255,7 +329,7 @@ Page({
     var that = this;
     var evalList = this.data.evalList;
     wx.chooseImage({
-      count: 20,
+      count: 1,
       sizeType: ["original", "compressed"],
       sourceType: [type],
       success: function (res) {
@@ -277,6 +351,29 @@ Page({
         that.setData({
           evalList: evalList
         })
+        if (that.data.input_contents==''){
+          that.setData({
+            isRuleTrues: true
+          })
+        }
+        var sss = that.data.b.concat(0) 
+        var sssa = that.data.a.concat('') 
+        that.setData({
+          b: sss,
+          a: sssa
+        })
+      var alis=that.data.a.length
+        var bss = that.data.b
+        for (var s=0; s < alis-1;s++){
+          if (that.data.a[s]==''){
+              bss[s]=1;
+          }
+         
+      }
+        that.setData({
+          b: bss
+        })
+        console.log(that.data.a.length);
         that.upLoadImg(img);
       },
     })
@@ -441,5 +538,50 @@ Page({
 
   },
 
+  getUserInfo: function (e) {
+var that=this
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        console.log(code)
+        wx.getUserInfo({
+          success: function (res) {
+            var userNick = res.userInfo.nickName;//用户昵称
+            var avataUrl = res.userInfo.avatarUrl;//用户头像地址
+            var gender = res.userInfo.gender;//用户性别
 
+            wx.request({
+              url: app.globalData.url + 'index/getuser',//服务器的地址，现在微信小程序只支持https请求，所以调试的时候请勾选不校监安全域名
+              data: {
+                code: code,
+                nick: userNick,
+                avaurl: avataUrl,
+
+              },
+              header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              method: "POST",
+              success: function (res) {
+                console.log(res.data);
+                app.globalData.openid = res.data.data,
+                  app.globalData.nick = userNick,
+                  app.globalData.avataurl = avataUrl
+                that.setData({
+                  openid: app.globalData.openid
+                })
+                  // wx.navigateTo({
+                  //   url: "/pages/chaunzhitiao1/chuanzhitiao1"
+                  // })
+              }
+            })
+
+
+
+          }
+        });
+      }
+    });
+
+  }
 })

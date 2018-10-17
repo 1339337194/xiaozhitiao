@@ -58,6 +58,12 @@ Page({
    url: "/pages/content_details/content_details?id=" + res.data.code
         })
         }
+
+        if (res.data.data.openid == app.globalData.openid){
+          wx.navigateTo({
+            url: "/pages/content_details/content_details?id=" + res.data.data.id
+          })
+        }
        
       }
     })
@@ -128,15 +134,15 @@ Page({
 
   },
  
-  change:function(){
+  change: function () {
     var that = this;
     this.setData({
-      isChecked: true,
-      state: true,
-       showView:true,
+      isChecked: (!that.data.isChecked),
+      showView: (!that.data.showView),
+      state: (!that.data.state)
     })
-
   },
+
   
 
   /*
@@ -327,44 +333,45 @@ Page({
   },
   onShareAppMessage: function () {
       var that=this;
+    wx.request({
+      url: app.globalData.url + 'index/zlogs', //仅为示例，并非真实的接口地址
+      data: {
+        zhiid: that.data.id,
+        openid: app.globalData.openid
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res.data);
+        wx.navigateTo({
+          url: "/pages/content_details/content_details?id=" + that.data.id
+        })
+      }
+    })
     return {
       title: this.data.title,
       path: '/pages/watch/watch?id=' + this.data.id,
       imageUrl: this.data.image,
  
-      success: function (res) {
-        // 转发成功
-        console.log("转发成功");
+      // success: function (res) {
+      //   // 转发成功
+      //   console.log("转发成功");
 
-        wx.request({
-          url: app.globalData.url + 'index/zlogs', //仅为示例，并非真实的接口地址
-          data: {
-            zhiid: that.data.id,
-            openid: app.globalData.openid
-          },
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          method: "POST",
-          success: function (res) {
-            console.log(res.data);
-            wx.navigateTo({
-              url: "/pages/content_details/content_details?id=" + that.data.id
-            })
-          }
-        })
+       
 
 
 
-      },
-      fail: function (res) {
-        // 转发失败
-        console.log("转发失败");
-      }
+      // },
+      // fail: function (res) {
+      //   // 转发失败
+      //   console.log("转发失败");
+      // }
       　　　
     }
 
-
+   
   },
 
    getUserInfo: function (e) {
