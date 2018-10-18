@@ -1,8 +1,10 @@
 <!--pages/watch/watch.wxml-->
-
+<view class='box111' bindtap='zhuan1'>
+    <image src='../img/bg29.png' style='width:19rpx;height:37rpx;float:left;margin-left:6%;margin-top:130rpx;'></image>
+</view>
 <view class='wrap box-shadow-3'>
  <view class="{{showView?'div12':'div11'}} {{state?'open':'down'}}"  style='background-image: url("{{image}}");'>
-        <text class="ziti11">{{title}}</text>
+        <text class="{{showView?'ziti12':'ziti11'}}">{{title}}</text>
   </view>
   <view class="div1">
     <view class='zi1'>选择任一选项即可查看小纸条</view>

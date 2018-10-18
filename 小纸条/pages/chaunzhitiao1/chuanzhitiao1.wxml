@@ -1,7 +1,7 @@
 <form bindsubmit="formSubmit">
 <view class="{{isIphoneX?'box5': 'wrap'}}">
     <image src="../img/bg5.png" class="div1"></image>
-    <view style='width:166rpx;height:60rpx;float:right;margin-right:30rpx;line-height:60rpx;margin-top:20rpx;font-size:28rpx;'>
+    <view style='width:166rpx;height:60rpx;float:right;margin-right:30rpx;line-height:60rpx;margin-top:124rpx;font-size:28rpx;'>
         <image  src='../img/bg9.png' style='width:100%;height:60rpx;'></image>  
         <view  bindtap='div1click'  wx:if="{{openid!=null}}" style="z-index:999;position:absolute;margin-top:-76rpx;font-size:28rpx;margin-left:58rpx;">收藏夹</view>
          <button  wx:if="{{openid==null}}" style="z-index:999;position:absolute;margin-top:-77rpx;font-size:28rpx;margin-left:58rpx;width:86rpx;height:50rpx;line-height:62rpx;padding:0;"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">收藏夹</button>
@@ -17,14 +17,14 @@
           </view>
 
    <view class="row {{isRuleTrues?'hide':'show'}}" id="textareawrap" >
-    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧"  bindinput='texts' name='content'  maxlength='5000' 
+    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧"  bindinput='texts' name='content'  maxlength='5000' cursor-spacing="80" 
     class="text1" auto-height>{{input_content}}</textarea>
    </view>
           <view style='width:100%;'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
-              <image  style='width:88%;margin-top:66rpx;margin-left: 6%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
+              <image  style='width:86%;margin-top:15rpx;margin-left: 7%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
                <view class="row {{b[index]?'hide':'show'}}" id="textareawrap" >
-                <textarea  placeholder="说点话吧" data-id='{{index}}' bindinput='text' name="contents{{index}}"  maxlength='5000' 
+                <textarea  placeholder="说点话吧" data-id='{{index}}' bindinput='text' name="contents{{index}}"  maxlength='5000'  style='margin:0;padding:0;' cursor-spacing="80"
     class="text1" auto-height></textarea>
       </view>
                <!-- <input hidden='true'  name='urls[{{index}}]' value='{{evalList[0].imgList[index]}}'></input> -->
@@ -45,7 +45,7 @@
           <text bindlongtap="formSubmit" class='zi3'>分享给好友</text>
     </view> -->
 </view>
-<view  class="{{isIphoneX?'box2': 'box1'}}"><button  wx:if="{{openid!=null}}" class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}" formType="submit">分享给好友</button>
+<view  class="{{isIphoneX?'box2': 'box1'}}" hover-stop-propagation='false'><button  wx:if="{{openid!=null}}" class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}" formType="submit">分享给好友</button>
  <button  wx:if="{{openid==null}}"  class="btndatis ziti3 normal {{isIphoneX?'box4': 'box3'}}"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 分享给好友 </button>
 </view>
 

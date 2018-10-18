@@ -1,3 +1,7 @@
+<view class='box111' bindtap='zhuan1'>
+    <image src='../img/bg29.png' style='width:19rpx;height:37rpx;float:left;margin-left:6%;margin-top:46rpx;'></image>
+    <view style='float:left;line-height:132rpx;margin-left:20rpx;'>纸条内容</view>
+</view>
 <!--pages/content_details/content_details.wxml-->
 <view class="{{isIphoneX?'div37': 'div36'}}">
 <!-- <view class="div1" style='height:auto;z-index:999;'>

@@ -1,10 +1,19 @@
 page{background: #f1f1f1;}
+.box111{
+  width: 100%;
+  position:fixed;
+  height: 132rpx;
+  background: #f1f1f1;
+  z-index: 100;
+  top: 0rpx;
+}
 .div{
   width: 100%;
   position:fixed;
   height: 105rpx;
   background: #f1f1f1;
   z-index: 100;
+  top: 132rpx;
 }
 .div1{
   width: 80%;
@@ -32,7 +41,7 @@ page{background: #f1f1f1;}
 .wrap{
   width: 96%;
   margin-left:2%;
-  margin-top: 110rpx;
+  margin-top:236rpx;
 }
 .ziti1{
   font-family: simsun;

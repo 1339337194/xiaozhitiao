@@ -1,4 +1,12 @@
 /* pages/content_details/content_details.wxss */
+.box111{
+  width: 100%;
+  position:fixed;
+  height: 132rpx;
+  background: #fff;
+  z-index: 100;
+  top: 0rpx;
+}
 .ipx1-bottom{
 margin-top:1%;
 }

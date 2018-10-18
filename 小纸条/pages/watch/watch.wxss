@@ -1,4 +1,12 @@
 /* pages/watch/watch.wxss */
+.box111{
+  width: 100%;
+  position:fixed;
+  height: 132rpx;
+  background: #fff;
+  z-index: 100;
+  top: 0rpx;
+}
 @keyframes slideup{
     from {
         height: 550rpx;
@@ -88,6 +96,16 @@ background-color: none;
 }
 
 .ziti11{
+  font-size: 36rpx;
+  color: #fff;
+  display: block;
+ margin-left: 35rpx;
+ margin-top: 35rpx;
+ padding:10rpx;
+ padding-top: 35rpx;
+}
+.ziti12{
+  height: 0rpx;
   font-size: 36rpx;
   color: #fff;
   display: block;

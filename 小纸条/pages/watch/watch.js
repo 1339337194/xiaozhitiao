@@ -133,7 +133,11 @@ Page({
     });
 
   },
- 
+  zhuan1: function () {
+    wx.redirectTo({
+      url: '/pages/chaunzhitiao1/chuanzhitiao1',
+    })
+  },
   change: function () {
     var that = this;
     this.setData({

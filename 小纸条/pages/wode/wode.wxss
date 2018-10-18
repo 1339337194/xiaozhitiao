@@ -1,5 +1,13 @@
 /* pages/shoucang/shoucang.wxss */
 page{background: #f1f1f1;}
+.box111{
+  width: 100%;
+  position:fixed;
+  height: 132rpx;
+  background: #f1f1f1;
+  z-index: 100;
+  top: 0rpx;
+}
 .head1{
   width: 16%;
   height: 37rpx;
@@ -55,7 +63,7 @@ page{background: #f1f1f1;}
 .wrap{
   width: 96%;
   margin-left:2%;
-  margin-top: 110rpx;
+  margin-top:235rpx;
 }
 .ziti1{
   font-family: simsun;

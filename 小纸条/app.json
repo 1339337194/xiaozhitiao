@@ -1,14 +1,17 @@
 {
   "pages":[
     "pages/chaunzhitiao1/chuanzhitiao1",
-    "pages/login/login",
+    "pages/watch/watch",
     "pages/content_details/content_details",
+    "pages/wode/wode",
+    "pages/shoucang/shoucang",
+    "pages/login/login",
    
     "pages/index/index",
-  "pages/watch/watch",
   "pages/erweima/erweima",
-   "pages/shoucang/shoucang",
-    "pages/wode/wode",
     "pages/logs/logs"
-  ]
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  }
 }

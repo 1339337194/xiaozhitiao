@@ -9,9 +9,9 @@ Page({
     zhi:'',
     img: app.globalData.imgurl
   },
-  fanhui: function () {
+  zhuan1: function () {
     wx.redirectTo({
-      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+      url: '/pages/chaunzhitiao1/chuanzhitiao1',
     })
   },
   shou: function () {

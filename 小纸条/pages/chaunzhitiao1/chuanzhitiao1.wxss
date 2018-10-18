@@ -31,7 +31,7 @@ line-height:70rpx;
   margin:0 auto;margin-top:45rpx;color:#fff;font-size:34rpx;line-height:90rpx;height:90rpx;width:356rpx;border-radius:50rpx;
 }
 .row{
-  margin:15rpx 0;margin-left:7%;margin-top:40rpx;width:86%;position: relative;
+  margin:15rpx 0;margin-left:6%;width:87%;position: relative;margin-bottom:11rpx;
 }
 .wrap{
   height: 100%;
@@ -48,7 +48,7 @@ line-height:70rpx;
   width:250rpx;
   height:100rpx;
   margin-left: 34%;
-  margin-top: 60rpx;
+  margin-top: 170rpx;
 }
 .div2{
   width: 166rpx;
@@ -94,9 +94,9 @@ font-size:34rpx;color:#333;width: 100%;
   width:104rpx;
   height:104rpx;
   margin:30rpx 0;
-  margin-left: 8%;
-  padding-bottom:100rpx;
-
+  margin-left: 7%;
+  padding-bottom:190rpx;
+  margin-top:0;
 }
 .zi3{
   color:#fff;
