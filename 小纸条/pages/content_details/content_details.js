@@ -39,7 +39,11 @@ Page({
     })
   },
 
-  
+  zhuan1: function () {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
   showtip:function(){
     var that=this;
     wx.showModal({

@@ -9,9 +9,9 @@ Page({
     zhi:'',
     img: app.globalData.imgurl
   },
-  zhuan1: function () {
+  fanhui: function () {
     wx.redirectTo({
-      url: '/pages/chaunzhitiao1/chuanzhitiao1',
+      url: "/pages/chaunzhitiao1/chuanzhitiao1"
     })
   },
   shou: function () {
@@ -54,7 +54,12 @@ Page({
     })
 
   },
+  zhuan1: function () {
+    wx.redirectTo({
 
+      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

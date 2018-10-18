@@ -9,9 +9,9 @@ Page({
     zhi: '',
     img: app.globalData.imgurl
   },
-  zhuan1: function () {
-    wx.redirectTo({
-      url: '/pages/chaunzhitiao1/chuanzhitiao1',
+  fanhui: function () {
+    wx.navigateTo({
+      url: "/pages/chaunzhitiao1/chuanzhitiao1"
     })
   },
 
@@ -27,7 +27,12 @@ Page({
       url: "/pages/wode/wode"
     })
   },
+  zhuan1: function () {
+    wx.redirectTo({
 
+      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -83,9 +88,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.redirectTo({
-      url: "/pages/chaunzhitiao1/chuanzhitiao1"
-    })
+    // wx.redirectTo({
+    //   url: "/pages/chaunzhitiao1/chuanzhitiao1"
+    // })
   },
 
   /**
