@@ -45,13 +45,25 @@ Page({
         console.log(res.data);
         console.log(app.globalData.openid);
         if (res.data.code == 0) {
-          that.setData({
-            title: res.data.data.title,
-            image: app.globalData.imgurl + res.data.data.gsurl,
-            id: res.data.data.id,
-            openid: app.globalData.openid
-          })
+          if (res.data.data.gsurl == '' || res.data.data.gsurl == 'null' || res.data.data.gsurl == null){
+            that.setData({
+              title: res.data.data.title,
+              image: 'https://www.donewthing.com/tmp/uploads/bg98.jpg',
+              id: res.data.data.id,
+              openid: app.globalData.openid
+            })
+          }else{
+            that.setData({
+              title: res.data.data.title,
+              image: app.globalData.imgurl + res.data.data.gsurl,
+              id: res.data.data.id,
+              openid: app.globalData.openid
+            })
+          }
          
+
+          
+        
 
         }else{
  wx.navigateTo({
@@ -67,6 +79,13 @@ Page({
        
       }
     })
+    // console.log(that.data.image);
+    // console.log("11111");
+    // if (that.data.image == 'https://www.donewthing.comnull' || that.data.image == '') {
+    //   that.setData({
+    //     image: '../img/bg98.jpg'
+    //   })
+    // }
     wx.request({
       url: app.globalData.url + 'index/getti', //仅为示例，并非真实的接口地址
       data: {
@@ -133,7 +152,11 @@ Page({
     });
 
   },
- 
+  zhuan1:function(){
+    wx.redirectTo({
+      url: '/pages/chaunzhitiao1/chuanzhitiao1',
+    })
+  },
   change: function () {
     var that = this;
     this.setData({

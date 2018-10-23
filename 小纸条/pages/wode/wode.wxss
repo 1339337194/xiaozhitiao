@@ -3,7 +3,7 @@ page{background: #f1f1f1;}
 .box111{
   width: 100%;
   position:fixed;
-  height: 132rpx;
+  height: 140rpx;
   background: #f1f1f1;
   z-index: 100;
   top: 0rpx;
@@ -28,22 +28,24 @@ page{background: #f1f1f1;}
   height: 38rpx;
   margin-left: 50%;
 }
-
 .div{
   width: 100%;
   position:fixed;
-  height: 105rpx;
+  height: 100rpx;
   background: #f1f1f1;
   z-index: 100;
+  top: 132rpx;
 }
+
 .div1{
   width: 80%;
   position:fixed;
+ margin-left:10%;
   height: 60rpx;
-  margin-left:10%;
+  margin-top: 30rpx;
   z-index: 100;
-  margin-top: 15rpx;
 }
+
 .div11{
   
   width: 117rpx;
@@ -63,7 +65,7 @@ page{background: #f1f1f1;}
 .wrap{
   width: 96%;
   margin-left:2%;
-  margin-top:235rpx;
+  margin-top:236rpx;
 }
 .ziti1{
   font-family: simsun;
@@ -99,7 +101,7 @@ page{background: #f1f1f1;}
 .div23{
   position: absolute;
   right: 5%;
-  top: 54%;
+  top: 70%;
   font-size: 18rpx;
   font-family: simsun;
   color: #8c8780;

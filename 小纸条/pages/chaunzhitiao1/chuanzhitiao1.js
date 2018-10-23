@@ -103,21 +103,21 @@ Page({
     var evalList = that.data.evalList;
    // var imgs = evalList[0].imgList;
 
-    if (e.detail.value.title == '') {
-      wx.showModal({
-        title: '提示',
-        showCancel: false,
-        content: '请填写标题',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-      return
-            }
+    // if (e.detail.value.title == '') {
+    //   wx.showModal({
+    //     title: '提示',
+    //     showCancel: false,
+    //     content: '请填写标题',
+    //     success: function (res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       } else if (res.cancel) {
+    //         console.log('用户点击取消')
+    //       }
+    //     }
+    //   })
+    //   return
+    //         }
 
     wx.request({
       url: app.globalData.url + 'index/addzhi', //仅为示例，并非真实的接口地址

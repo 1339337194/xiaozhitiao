@@ -326,7 +326,7 @@ Page({
    onChangeShowState: function () {
     var that = this;
     that.setData({
-      showView1: (!this.data.showView1)
+      showView1: true
     })
   },
   onChangeShowState1: function () {

@@ -1,8 +1,14 @@
 page{background: #f1f1f1;}
+.kuan{
+  width: 100%;
+}
+.gao{
+  height:100%;
+}
 .box111{
   width: 100%;
   position:fixed;
-  height: 132rpx;
+  height: 140rpx;
   background: #f1f1f1;
   z-index: 100;
   top: 0rpx;
@@ -10,17 +16,25 @@ page{background: #f1f1f1;}
 .div{
   width: 100%;
   position:fixed;
-  height: 105rpx;
+  height: 100rpx;
   background: #f1f1f1;
   z-index: 100;
   top: 132rpx;
+}
+.div13{
+  width: 100%;
+  position:fixed;
+  height: 100rpx;
+  background: #f1f1f1;
+  z-index: 100;
+  top: 128rpx;
 }
 .div1{
   width: 80%;
   position:fixed;
  margin-left:10%;
   height: 60rpx;
-  margin-top: 15rpx;
+  margin-top: 30rpx;
   z-index: 100;
 }
 .div11{
@@ -78,7 +92,7 @@ page{background: #f1f1f1;}
 .div23{
   position: absolute;
   right: 6%;
-  top: 57%;
+  top: 70%;
   font-size: 18rpx;
   font-family: simsun;
   color: #8c8780;

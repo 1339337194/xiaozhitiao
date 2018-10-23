@@ -27,6 +27,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  imageLoad: function (e) {
+    var w = e.detail.width
+    h = e.detail.height
+  },
   onLoad: function (options) {
     console.log(app.globalData.openid)
     var that = this;

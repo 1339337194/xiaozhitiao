@@ -7,7 +7,8 @@ Page({
     */
   data: {
     zhi: '',
-    img: app.globalData.imgurl
+    img: app.globalData.imgurl,
+    className: [],
   },
   fanhui: function () {
     wx.navigateTo({
@@ -36,7 +37,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  imageLoad: function (e){
+    var w = e.detail.width;
+    var h = e.detail.height;
+    var name = (w > h) ? 'gao' : 'kuan'; 
+    this.data.className.concat(name);
+    this.setData({
+      classArr: this.data.className
+    })
+    console.log(this);
+  },
   onLoad: function (options) {
+    let isIphone5 = app.globalData.isIphone5;
+    this.setData({
+      isIphone5: isIphone5
+    })
     console.log(app.globalData.openid)
     var that = this;
     wx.request({

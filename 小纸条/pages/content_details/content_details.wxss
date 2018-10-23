@@ -1,8 +1,28 @@
 /* pages/content_details/content_details.wxss */
+.box112{
+  word-wrap:break-word;break-word:break-all;color:#333;min-height:26rpx;max-height:80rpx;background:#f1f0ef;width:500rpx;margin-left:20rpx;margin-top:16rpx;border-radius:258rpx;padding:15rpx 26rpx;float:left;margin-bottom:16rpx;
+}
+.box113{
+  word-wrap:break-word;break-word:break-all;color:#333;min-height:26rpx;max-height:80rpx;background:#f1f0ef;width:530rpx;margin-left:12rpx;margin-top:16rpx;border-radius:258rpx;padding:15rpx;float:left;margin-bottom:16rpx;
+}
+.box117{
+  word-wrap:break-word;break-word:break-all;color:#333;min-height:20rpx;max-height:74rpx;background:#f1f0ef;width:530rpx;margin-left:12rpx;margin-top:16rpx;border-radius:258rpx;padding:15rpx;float:left;margin-bottom:16rpx;
+}
+.box114{
+  background:none;float:left;margin-left:74rpx;margin-top:4rpx;
+}
+.box115{
+  background:none;float:left;margin-left:77rpx;margin-top:8rpx;
+}
+.box116{
+    width:48rpx;height:48rpx;position:absolute;
+margin-left:22rpx;
+margin-top:16rpx;
+}
 .box111{
   width: 100%;
   position:fixed;
-  height: 132rpx;
+  height: 160rpx;
   background: #fff;
   z-index: 100;
   top: 0rpx;
@@ -34,7 +54,7 @@ button::after {
 }
 .ziti1{
   font-size:60rpx;font-color:#302f32;margin-left:10%;margin-top:20rpx;
-  width:82%;height:auto; 
+  width:82%;height:auto; font-weight:600;
 }
 .div12{
   width:44rpx;height:44rpx;margin-top:32rpx;
@@ -48,43 +68,52 @@ float:left;
   width:96%;height:880rpx;position:relative;margin-left:2%;margin-bottom: 10rpx;margin-top: 10rpx;
 }
 .ziti3{
-  width:90%;margin-left:5%;font-size:30rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
+  width:90%;margin-left:5%;font-size:32rpx;line-height:50rpx;word-break:break-all; word-wrap:break-word;
 }
 .ziti4{
   font-size:30rpx;color:#000000;line-height:49rpx;font-family:simsun;margin-left:15rpx;float:left;
+  font-weight:600;
 }
 .div2{
-  margin:25rpx 0;margin-left:4%;width:90%;
+  margin:25rpx 0;margin-left:3.5%;width:90%;
 }
 .ziti5{
   font-size:28rpx;color:#000000;font-family:simsun;
-  line-height: 35rpx;
+  line-height: 30rpx;
   word-break:break-all;
    word-wrap:break-word;
-   width:84%;
+   width:94%;
    margin-left:12rpx;
+   float: left;
 }
 .div3{
-  position:fixed;bottom:0rpx;height:90rpx;background:#dcdddd;z-index:10rpx;width:100%;
+  position:fixed;bottom:0rpx;background:#fff;z-index:10rpx;width:100%;overflow: hidden;
+min-height: 88rpx;border-top: 2rpx solid #dcdddd;max-height: 138rpx;height: auto;
 }
 .div31{
- margin-top: 2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:88rpx !important;width:100%;
+ margin-top: 2rpx;background:#ffffff;position:fixed;z-index:11rpx;width:100%;height: auto;min-height: 86rpx;
+
 }
 .div35{
   margin-top: 2rpx;background:#ffffff;position:fixed;z-index:11rpx;height:160rpx !important;width:100%;
 }
 .input1{
-  background:#f1f0ef;position:absolute;height:58rpx;width:530rpx;margin-left:30rpx;margin-top:17rpx;border-radius:50rpx;line-height: 58rpx;
+  background:#f1f0ef;position:absolute;width:530rpx;margin-left:30rpx;margin-top:17rpx;border-radius:50rpx;line-height: 58rpx;height: auto;
   word-wrap: break-word; break-word: break-all;
 }
 .div32{
-  width:48rpx;height:48rpx;position:absolute;margin-left:598rpx;margin-top:20rpx;
+  width:48rpx;height:48rpx;position:absolute;
+margin-left:20rpx;
+margin-top:19rpx;
+
 }
 .div33{
   width:50rpx;height:45rpx;position:absolute;margin-left:677rpx;margin-top:30rpx;background:url(../img/bg19.png);
 }
+
 .div34{
-  position:fixed;bottom:0rpx;height:160rpx;background:#dcdddd;z-index:10rpx;width:100%;
+  position:fixed;bottom:0rpx;min-height:88rpx;background:#fff;z-index:10rpx;width:100%;overflow: hidden;max-height:138rpx;
+  border-top: 2rpx solid #dcdddd;height: auto;
 }
 .div36{
   width:100%;padding-bottom:130rpx;

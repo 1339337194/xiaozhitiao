@@ -1,9 +1,11 @@
 <view class='box111' bindtap='zhuan1'>
-    <image src='../img/bg29.png' style='width:19rpx;height:37rpx;float:left;margin-left:6%;margin-top:46rpx;'></image>
-    <view style='float:left;line-height:132rpx;margin-left:20rpx;'>纸条内容</view>
+    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'></image>
+    <view style='float:left;margin-top:68rpx;margin-left:20rpx;'>纸条内容</view>
 </view>
+
 <!--pages/content_details/content_details.wxml-->
 <view class="{{isIphoneX?'div37': 'div36'}}">
+
 <!-- <view class="div1" style='height:auto;z-index:999;'>
       <image src='../img/bg13.png' class='div11'></image>
       <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
@@ -13,72 +15,77 @@
       </view>
 </view> -->
 
-<view class="div1" wx:if="{{shou==0&&user==0}}" style='height:auto;position:relative;'>
-      <image src='../img/bg13.png' class='div11'></image>
-      <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
-      <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
-          <image src='../img/bg14.png' class='div12'></image>
-          <text class='ziti2'>举报</text>
-      </view>
-</view>
+  <view class="div1" wx:if="{{shou==0&&user==0}}" style='height:auto;position:relative;margin-top:140rpx;'>
+    <image src='../img/bg13.png' class='div11'></image>
+    <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
+    <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
+      <image src='../img/bg14.png' class='div12'></image>
+      <text class='ziti2'>举报</text>
+    </view>
+  </view>
 
-<view class="div1" wx:if="{{shou==1||user==1}}" style='height:auto;position:relative;'>
-      <image src='../img/bg13.png' class='div11'></image>
-      <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
-      <view bindtap='buttonTap' style='height:120rpx;margin-left:92%;'>
-          <image src='../img/bg25.jpg' class='div12' style='margin-top:24rpx;'></image>
-          <text class='ziti2' style='width:30px;margin-top:0rpx;margin-left:-5px;'>二维码</text>
-      </view>
-</view>
+  <view class="div1" wx:if="{{shou==1||user==1}}" style='height:auto;position:relative;margin-top:140rpx;'>
+    <image src='../img/bg13.png' class='div11'></image>
+    <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
+    <view bindtap='buttonTap' style='height:120rpx;margin-left:92%;'>
+      <image src='../img/bg25.jpg' class='div12' style='margin-top:24rpx;'></image>
+      <text class='ziti2' style='width:30px;margin-top:0rpx;margin-left:-5px;'>二维码</text>
+    </view>
+  </view>
 
+  <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;margin-top:10rpx;margin-left:5%;border-radius:15rpx;' mode="widthFix">
+  </image>
 
- <image src="{{img}}{{content.url}}" wx:if="{{content.url!=''}}" style='width:90%;margin-top:10rpx;margin-left:5%;border-radius:15rpx;' mode="widthFix"></image>
- <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
+  <view class='ziti3' style='margin-top:5rpx;'>{{content.content}}</view>
 
-<view style='width:90%;margin-left:5%;' wx:for="{{content.urls}}" data-index="{{index}}">
-  <image src="{{img}}{{item}}"  wx:if="{{item!=''}}"  style='border-radius:15rpx;margin-top:25rpx;width:100%;' mode="widthFix"></image>
-  <view class='ziti3' style='margin-top:5rpx;'>{{jj[index]}}</view>
-</view>
+  <view style='width:90%;margin-left:5%;' wx:for="{{content.urls}}" data-index="{{index}}">
+    <image src="{{img}}{{item}}"  wx:if="{{item!=''}}"  style='border-radius:15rpx;margin-top:25rpx;width:100%;' mode="widthFix">
+    </image>
+    <view class='ziti3' style='margin-top:5rpx;'>{{jj[index]}}</view>
+  </view>
+
 <!-- <view  wx:for="{{content.urls}}">{{item}}</view> -->
-<view style='margin-top:25rpx;margin-left:5%'>
-      <image src='../img/bg13.png' style='width:4rpx;height:49rpx;float:left;border-radius:10rpx'></image>
-      <text class='ziti4'>评论</text>
-      <view style='clear:both'></view>
-</view>
-<view class='div2' wx:for="{{ping}}" >
+
+  <view style='margin-top:25rpx;margin-left:5%'>
+    <image src='../img/bg13.png' style='width:4rpx;height:49rpx;float:left;border-radius:10rpx'></image>
+    <text class='ziti4'>评论</text>
+    <view style='clear:both'></view>
+  </view>
+
+  <view class='div2' wx:for="{{ping}}" >
     <!-- <image src='../img/bg16.png' style='width:26rpx;height:26rpx;'></image> -->
-    <view style='width:24rpx;height:24rpx;border-radius:500rpx;display:inline-block; background-color:{{usercol}};'></view>
-        <text data-pid='{{item.id}}'  bindlongtap='havesave' class='ziti5'>{{item.content}}</text>
+    <view style='width:28rpx;height:28rpx;border-radius:500rpx;float:left; background-color:{{item.usercol}};'></view>
+    <text data-pid='{{item.id}}'  bindlongtap='havesave' class='ziti5'>{{item.content}}</text>
     <view style='clear:both;'></view>
-</view>
+  </view>
+
 <!--
 <action-sheet hidden="{{onOff}}">
     <action-sheet-item bindtap='showtip'>举报</action-sheet-item>
 </action-sheet>
 -->
 </view>
+
+
 <form bindsubmit="formSubmit">
-<view class="{{isIphoneX?'div34': 'div3'}}">
-    <view class="{{isIphoneX?'div35': 'div31'}}">
-          <view class='input1'>
-          <view style='width:90%;margin-left:5%;height:59rpx;float:left;'>
-          <textarea  placeholder='发表评论...' name='content'  maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState1"  cursor-spacing="20" placeholder-style=''
-          style='width:100%;height:54rpx !important;float:left;color:#333;padding-top:5rpx;line-height:50rpx;'></textarea>
-          </view>
-          </view>
-          <view class="hide{{showView1?'':'show'}}">
-                <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
-                 <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class='div32'></image>
-                <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
-                <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
-                <view style='position:absolute;margin-left:85%;' class=" {{isIphone5?'ipx-bottom': 'ipx1-bottom'}}"><button style="background:none;"  open-type='share'>
-                <image src="../img/bg19.png" style="width:52rpx;height:44rpx;"></image>
-                </button>
-                </view>    
-          </view>
-          <button style='background:#ffd249;border-radius:50rpx;color:#000;position:absolute;font-size:28rpx;margin-left:592rpx;margin-top:16rpx;width:132rpx;height:56rpx;line-height:56rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
+  <view class="div3">
+    <textarea placeholder='发表评论...' name='content'  maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState1"   auto-height cursor-spacing='20'
+ class="{{isIphone5?'box113': 'box112'}}">
+    </textarea>
+    <view class="hide {{showView1?'':'show'}}">
+      <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>
+      <image bindtap='qushou'  wx:if="{{shou==1}}" src='../img/bg28.png' class="{{isIphone5?'box116': 'div32'}}"></image>
+      <!-- <image catchtap='onCollectionTap'  wx:if="{{collected}}" src='../img/bg18.png' class='div32' ></image> -->
+      <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
+      <view style='margin-left:30rpx;' class="{{isIphone5?'ipx-bottom': 'ipx1-bottom'}}">
+        <button class="{{isIphone5?'box115': 'box114'}}"  open-type='share'>
+          <image src="../img/bg19.png" style="width:42rpx;height:42rpx;float:left;margin-top:20rpx;"></image>
+        </button>
+      </view>    
     </view>
-</view>
+    <button style='background:#ffd249;border-radius:50rpx;color:#000;font-size:28rpx;margin-left:592rpx;margin-top:24rpx;width:132rpx;height:56rpx;line-height:56rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
+  
+  </view>
 </form>
 
 <!-- <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
