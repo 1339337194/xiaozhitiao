@@ -79,7 +79,7 @@
       <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
       <view style='margin-left:30rpx;' class="{{isIphone5?'ipx-bottom': 'ipx1-bottom'}}">
         <button class="{{isIphone5?'box115': 'box114'}}"  open-type='share'>
-          <image src="../img/bg19.png" style="width:42rpx;height:42rpx;float:left;margin-top:20rpx;"></image>
+          <image src="../img/bg19.png" style="width:42rpx;height:42rpx;float:left;margin-top:21rpx;"></image>
         </button>
       </view>    
     </view>
