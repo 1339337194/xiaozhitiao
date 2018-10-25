@@ -1,4 +1,8 @@
 /* pages/chaunzhitiao1/chuanzhitiao1.wxss */
+.box6{
+  width:166rpx;height:60rpx;float:right;margin-right:30rpx;line-height:60rpx;margin-top:170rpx;font-size:28rpx;border-radius:50rpx;background:rgb(241,240,239);
+  opacity: 0.5;
+}
 .ziti31 {
 color:#fff;
 font-size:30rpx;
@@ -113,10 +117,13 @@ button {
     height: 100%;
     width: 100%;
     position: fixed;
-    
+    background-color: rgb(0, 0, 0);
     z-index:999;
     top: 0;
     left: 0;
+     -moz-opacity: 0.8;  
+  opacity: 0.9;  
+  filter: alpha(opacity=80); 
 }
 .ZhezhaoContent{
     width: 80%;

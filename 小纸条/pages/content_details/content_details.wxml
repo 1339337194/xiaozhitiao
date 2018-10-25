@@ -1,6 +1,6 @@
-<view class='box111' bindtap='zhuan1'>
-    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'></image>
-    <view style='float:left;margin-top:68rpx;margin-left:20rpx;'>纸条内容</view>
+<view class='box111'>
+    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'  bindtap='zhuan1'></image>
+    <view style='float:left;margin-top:68rpx;margin-left:20rpx;'>内容</view>
 </view>
 
 <!--pages/content_details/content_details.wxml-->
@@ -16,7 +16,7 @@
 </view> -->
 
   <view class="div1" wx:if="{{shou==0&&user==0}}" style='height:auto;position:relative;margin-top:140rpx;'>
-    <image src='../img/bg13.png' class='div11'></image>
+    <image src='../img/bg13.png' class='div11' style="display:{{content.title ? '' : 'none'}}"></image>
     <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
     <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
       <image src='../img/bg14.png' class='div12'></image>
@@ -25,7 +25,7 @@
   </view>
 
   <view class="div1" wx:if="{{shou==1||user==1}}" style='height:auto;position:relative;margin-top:140rpx;'>
-    <image src='../img/bg13.png' class='div11'></image>
+    <image src='../img/bg13.png' class='div11' style="display:{{content.title ? '' : 'none'}}"></image>
     <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
     <view bindtap='buttonTap' style='height:120rpx;margin-left:92%;'>
       <image src='../img/bg25.jpg' class='div12' style='margin-top:24rpx;'></image>
@@ -79,7 +79,7 @@
       <!-- <view  wx:else catchtap='onCollectionTap'><image src='../img/bg19.png' class='div32' ></image></view> -->
       <view style='margin-left:30rpx;' class="{{isIphone5?'ipx-bottom': 'ipx1-bottom'}}">
         <button class="{{isIphone5?'box115': 'box114'}}"  open-type='share'>
-          <image src="../img/bg19.png" style="width:42rpx;height:42rpx;float:left;margin-top:21rpx;"></image>
+          <image src="../img/bg19.png" style="width:42rpx;height:42rpx;float:left;margin-top:20rpx;"></image>
         </button>
       </view>    
     </view>

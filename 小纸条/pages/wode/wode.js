@@ -10,8 +10,8 @@ Page({
     img: app.globalData.imgurl
   },
   fanhui: function () {
-    wx.redirectTo({
-      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+    wx.navigateBack({
+      delta: 9999
     })
   },
   shou: function () {

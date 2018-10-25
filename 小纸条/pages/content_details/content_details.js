@@ -41,7 +41,7 @@ Page({
 
   zhuan1: function () {
     wx.navigateBack({
-      delta: 1
+      delta: 9999
     })
   },
   showtip:function(){
@@ -364,18 +364,13 @@ Page({
           })
 
         }
-        wx.showModal({
-          title: '提示',
-          showCancel: false,
-          content: '已收藏',
-          success: function (res) {
-            if (res.confirm) {
-           
-            } else if (res.cancel) {
-             
-            }
-          }
+        wx.showToast({
+          title: '已收藏',
+          icon: 'succes',
+          duration: 1000,
+          mask: true
         })
+      
       
       }
     })

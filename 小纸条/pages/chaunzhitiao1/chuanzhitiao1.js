@@ -26,6 +26,7 @@ Page({
     title:'',
     input_title: '',
     input_content:'',
+    isfouce: false ,
     phone: '',
     evalList: [{ tempFilePaths: [], imgList: [] }],
     tempFilePaths: [],
@@ -39,6 +40,21 @@ Page({
     // 单击事件点击后要触发的函数
     lastTapTimeoutFunc: null,
   },
+  isfouce: function () {
+    var that=this
+   that.setData({
+      isfouce: false,
+     content1: this.data.input_content
+    })
+  },
+  bindTextAreaBlur: function (e) {
+    this.setData({
+      isfouce: true,
+      input_content: e.detail.value,
+      content1:this.data.input_content
+    })
+
+  },    
   showerweima: function (e) {
     var that = this;
  wx.request({
@@ -76,7 +92,7 @@ Page({
       isRuleTrue: false
     })
   },
-
+  
   onShareAppMessage: function (e) {
     console.log(this.data.title)
     console.log(this.data.gsimg)

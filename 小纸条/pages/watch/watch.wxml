@@ -8,7 +8,7 @@
         <text class="{{showView?'ziti12':'ziti11'}}">{{title}}</text>
   </view>
   <view class="div1">
-    <view class='zi1'>选择任一选项即可查看小纸条</view>
+    <view class='zi1'>分享或答题查看清楚详情</view>
       <!-- <view  class="btn1 ziti3"  bindtap='pay' style='left:4%;background:#ffd148;border-radius:50rpx;' >
           赏一下
       </view> -->

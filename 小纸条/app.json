@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/chaunzhitiao1/chuanzhitiao1",
-    "pages/content_details/content_details",
     "pages/watch/watch",
+    "pages/content_details/content_details",
     "pages/wode/wode",
     "pages/shoucang/shoucang",
     "pages/login/login",

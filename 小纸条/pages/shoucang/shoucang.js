@@ -9,10 +9,11 @@ Page({
     zhi: '',
     img: app.globalData.imgurl,
     className: [],
+    bheight: app.globalData.statusBarHeight
   },
   fanhui: function () {
-    wx.navigateTo({
-      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+    wx.navigateBack({
+      delta: 9999
     })
   },
 
@@ -48,6 +49,7 @@ Page({
     console.log(this);
   },
   onLoad: function (options) {
+   
     let isIphone5 = app.globalData.isIphone5;
     this.setData({
       isIphone5: isIphone5
