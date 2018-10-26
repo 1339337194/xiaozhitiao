@@ -19,7 +19,14 @@ Page({
     modalHidden: true,
     jj:[]
   },
-
+  viewImage(e) {
+    console.log(e.target.dataset.src)
+    // urls: e.target.dataset,
+    //   current: e.target.dataset,
+    wx.previewImage({
+      urls: e.target.dataset.src.split(',')
+    });
+  },
 
   buttonTap: function () {
     this.setData({
@@ -32,13 +39,55 @@ Page({
       modalHidden: true
     })
   },
-  modalConfirm: function () {
+  modalConfirm: function (e) {
+    var that = this
     // do something
     this.setData({
       modalHidden: true
     })
+    console.log(e.target.dataset.url)
+    that.saveImg(e.target.dataset.url)
   },
+  saveImg: function (e) {
+    wx.downloadFile({
+      url: e,//'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      success: function (res) {
+        let path = res.tempFilePath
+        wx.saveImageToPhotosAlbum({
+          filePath: path,
+          success(res) {
+            console.log(res)
 
+
+            wx.showModal({
+              title: '提示',
+              showCancel: true,
+              content: '保存成功',
+              success: function (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+
+
+          },
+          fail(res) {
+            console.log(res)
+          },
+          complete(res) {
+            console.log(res)
+          }
+        })
+      }, fail: function (res) {
+        console.log(res)
+      }
+    })
+
+  },
   zhuan1: function () {
     wx.navigateBack({
       delta: 9999
@@ -425,7 +474,7 @@ Page({
     wx.request({
       url: app.globalData.url + 'index/ping', //仅为示例，并非真实的接口地址
       data: {
-        zhiid:that.data.content.id,
+        zhiid: that.data.content.id,
         openid: app.globalData.openid,
         content: e.detail.value.content
       },
@@ -435,13 +484,19 @@ Page({
       },
       method: "POST",
       success: function (res) {
-        console.log(res.data);
+
 
         if (res.data.code == 0) {
-          wx.redirectTo({
-            url: "/pages/content_details/content_details?id=" + that.data.content.id
+          var pings = that.data.ping
+          pings = pings.concat([{ 'content': e.detail.value.content, 'usercol': res.data.data }]);//
+          console.log(pings);
+          that.setData({
+            ping: pings
           })
-        }else{
+          // wx.redirectTo({
+          //   url: "/pages/content_details/content_details?id=" + that.data.content.id
+          // })
+        } else {
           // wx.showModal({
           //   title: '提示',
           //   showCancel: false,

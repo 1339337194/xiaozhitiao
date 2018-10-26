@@ -119,21 +119,21 @@ Page({
     var evalList = that.data.evalList;
    // var imgs = evalList[0].imgList;
 
-    // if (e.detail.value.title == '') {
-    //   wx.showModal({
-    //     title: '提示',
-    //     showCancel: false,
-    //     content: '请填写标题',
-    //     success: function (res) {
-    //       if (res.confirm) {
-    //         console.log('用户点击确定')
-    //       } else if (res.cancel) {
-    //         console.log('用户点击取消')
-    //       }
-    //     }
-    //   })
-    //   return
-    //         }
+    if (e.detail.value.title == '' && e.detail.value.url == '' && e.detail.value.content == undefined) {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '请填写内容',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return
+    }
 
     wx.request({
       url: app.globalData.url + 'index/addzhi', //仅为示例，并非真实的接口地址
@@ -142,6 +142,7 @@ Page({
         img: e.detail.value.url,
         content: e.detail.value.content,
         imgs: evalList[0].imgList,
+        imgsp: evalList[0].tempFilePaths,
         openid: app.globalData.openid,
         jsons: e.detail.value 
       },
@@ -256,8 +257,19 @@ Page({
     })
   },
   towode: function () {
-    wx.navigateTo({
-      url: '../wode/wode',
+    wx.request({
+      url: app.globalData.url + 'index/del',//服务器的地址，现在微信小程序只支持https请求，所以调试的时候请勾选不校监安全域名
+      data: {
+        id: e.target.dataset.id
+
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      success: function (res) {
+
+      }
     })
   },
   /**
@@ -317,10 +329,10 @@ Page({
     var evalList = this.data.evalList;
     var that = this;
     var imgNumber = evalList[index].tempFilePaths;
-    if (imgNumber.length >= 20) {
+    if (imgNumber.length >= 10) {
       wx.showModal({
         title: '',
-        content: '最多上传二十张图片',
+        content: '最多上传十张图片',
         showCancel: false,
       })
       return;
@@ -351,7 +363,7 @@ Page({
       success: function (res) {
         var addImg = res.tempFilePaths;
         var addLen = addImg.length;
-        if ((len + addLen) > 20) {
+        if ((len + addLen) > 10) {
           for (var i = 0; i < (addLen - len); i++) {
             var str = {};
             str.pic = addImg[i];
@@ -367,29 +379,29 @@ Page({
         that.setData({
           evalList: evalList
         })
-        if (that.data.input_contents==''){
+        if (that.data.input_contents == '') {
           that.setData({
             isRuleTrues: true
           })
         }
-        var sss = that.data.b.concat(0) 
-        var sssa = that.data.a.concat('') 
+        var sss = that.data.b.concat(0)
+        var sssa = that.data.a.concat('')
         that.setData({
           b: sss,
           a: sssa
         })
-      var alis=that.data.a.length
+        var alis = that.data.a.length
         var bss = that.data.b
-        for (var s=0; s < alis-1;s++){
-          if (that.data.a[s]==''){
-              bss[s]=1;
+        for (var s = 0; s < alis - 1; s++) {
+          if (that.data.a[s] == '') {
+            bss[s] = 1;
           }
-         
-      }
+
+        }
         that.setData({
           b: bss
         })
-        console.log(that.data.a.length);
+        //   console.log(that.data.a.length);
         that.upLoadImg(img);
       },
     })
@@ -400,6 +412,7 @@ Page({
   },
   //多张图片上传
   upload: function (page, path) {
+    console.log(path)
     var that = this;
     var curImgList = [];
     for (var i = 0; i < path.length; i++) {
@@ -408,7 +421,7 @@ Page({
         title: "正在上传"
       }),
         wx.uploadFile({
-        url: app.globalData.url + 'index/mchimg',//接口处理在下面有写
+          url: app.globalData.url + 'index/mchimg',//接口处理在下面有写
           filePath: path[i].pic,
           name: 'file',
           header: { "Content-Type": "multipart/form-data" },
@@ -424,11 +437,11 @@ Page({
               evalList: evalList
             })
             if (res.statusCode != 200) {
-              wx.showModal({
-                title: '提示',
-                content: '上传失败',
-                showCancel: false
-              })
+              // wx.showModal({
+              //   title: '提示',
+              //   content: '上传失败',
+              //   showCancel: false
+              // })
               return;
             }
             var data = res.data
@@ -437,11 +450,27 @@ Page({
             })
           },
           fail: function (e) {
-            wx.showModal({
-              title: '提示',
-              content: '上传失败',
-              showCancel: false
-            })
+
+
+            // curImgList.push('1');
+            // var evalList = that.data.evalList;
+            // evalList[0].imgList = curImgList;
+            // that.setData({
+            //   evalList: evalList
+            // })
+
+            // wx.showModal({
+            //   title: '提示',
+            //   content: '上传失败',
+            //   showCancel: false
+            // })
+            // var evalList = that.data.evalList;
+            // evalList[0].imgList = evalList[0].imgList.push('1');
+            // console.log(evalList)
+            // console.log('11')
+            // that.setData({
+            //   evalList: evalList
+            // })
           },
           complete: function () {
             wx.hideToast();  //隐藏Toast
@@ -472,13 +501,15 @@ Page({
           var index = e.currentTarget.dataset.index;
           var evalList = that.data.evalList;
           var img = evalList[0].tempFilePaths;
-          img.splice(index, 1);
-          evalList[0].imgList.splice(index, 1);
+          //img.splice(index, 1);
+          //evalList[0].imgList.splice(index, 1);
+          img[index] = '1';
+          evalList[0].imgList[index] = '1';
           that.setData({
             evalList: evalList
           })
-          that.upLoadImg(img);
-          console.log(evalList[0].imgList) 
+          // that.upLoadImg(img);
+          console.log(evalList[0].imgList)
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
@@ -495,35 +526,84 @@ Page({
 
   upimg: function () {
     var that = this;
-    wx.chooseImage({
-      count: 1,
+    wx.showActionSheet({
+      itemList: ["从相册中选择", "拍照"],
+      itemColor: "#f7982a",
       success: function (res) {
-        var data = {
-          program_id: app.jtappid
-        }
-        var tempFilePaths = res.tempFilePaths  //图片
-     
-        wx.uploadFile({
-         
-          url: app.globalData.url + 'index/mchimg',//接口处理在下面有写
-          filePath: tempFilePaths[0],
-          name: 'file',
-          header: { "Content-Type": "multipart/form-data" },
-          formData: {
-            //douploadpic: '1'
+        if (!res.cancel) {
+          if (res.tapIndex == 0) {
+            // that.chooseWxImage("album", imgNumber);
+            wx.chooseImage({
+              count: 1,
+              sizeType: ["original", "compressed"],
+              sourceType: ['album'],
+              success: function (res) {
+                var data = {
+                  program_id: app.jtappid
+                }
+                var tempFilePaths = res.tempFilePaths  //图片
 
-          },
-          success: function (res) {
-            console.log(res.data)
-            that.setData({
-              imgurl: res.data,
-              imgss: app.globalData.imgurl+res.data
+                wx.uploadFile({
+
+                  url: app.globalData.url + 'index/mchimg',//接口处理在下面有写
+                  filePath: tempFilePaths[0],
+                  name: 'file',
+                  header: { "Content-Type": "multipart/form-data" },
+                  formData: {
+                    //douploadpic: '1'
+
+                  },
+                  success: function (res) {
+                    //  console.log(res.data)
+                    that.setData({
+                      imgurl: res.data,
+                      imgss: app.globalData.imgurl + res.data
+                    })
+                  }
+                })
+
+              }
             })
-          }
-        })
+          } else if (res.tapIndex == 1) {
+            wx.chooseImage({
+              count: 1,
+              sizeType: ["original", "compressed"],
+              sourceType: ['camera'],
+              success: function (res) {
+                var data = {
+                  program_id: app.jtappid
+                }
+                var tempFilePaths = res.tempFilePaths  //图片
 
+                wx.uploadFile({
+
+                  url: app.globalData.url + 'index/mchimg',//接口处理在下面有写
+                  filePath: tempFilePaths[0],
+                  name: 'file',
+                  header: { "Content-Type": "multipart/form-data" },
+                  formData: {
+                    //douploadpic: '1'
+
+                  },
+                  success: function (res) {
+                    //   console.log(res.data)
+                    that.setData({
+                      imgurl: res.data,
+                      imgss: app.globalData.imgurl + res.data
+                    })
+                  }
+                })
+
+              }
+            })
+            // that.chooseWxImage("camera", imgNumber);
+          }
+        }
       }
     })
+
+
+
   },
 
 
@@ -543,7 +623,8 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           that.setData({
-            imgss:''
+            imgss:'',
+            imgurl: '',
           })
 
         } else if (res.cancel) {

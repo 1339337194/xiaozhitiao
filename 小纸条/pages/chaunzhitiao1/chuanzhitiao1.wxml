@@ -22,7 +22,7 @@
    </view>
           <view style='width:100%;'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
-              <image  style='width:86%;margin-top:15rpx;margin-left: 7%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
+              <image  wx:if="{{item.pic!=null}}"  style='width:86%;margin-top:15rpx;margin-left: 7%;border-radius:15rpx;' bindlongtap="longTaps" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{item.pic}}" data-index="{{index}}" class="upload" mode="widthFix"></image>
                <view class="row {{b[index]?'hide':'show'}}" id="textareawrap" >
                 <textarea  placeholder="说点话吧" data-id='{{index}}' bindinput='text' name="contents{{index}}"  maxlength='5000'  style='margin:0;padding:0;' cursor-spacing="80"
     class="text1" auto-height></textarea>
