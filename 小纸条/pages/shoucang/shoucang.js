@@ -18,13 +18,13 @@ Page({
   },
 
   xiang: function (e) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: "/pages/content_details/content_details?id=" + e.currentTarget.dataset.id
     })
   },
  
   wode: function () {
-    wx.navigateTo({
+    wx.redirectTo({
 
       url: "/pages/wode/wode"
     })
@@ -32,7 +32,7 @@ Page({
   zhuan1: function () {
     wx.redirectTo({
 
-      url: "/pages/chaunzhitiao1/chuanzhitiao1"
+      url: "/pages/chuanzhitiao1/chuanzhitiao1"
     })
   },
   /**

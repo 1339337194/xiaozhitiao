@@ -31,6 +31,7 @@ Page({
     evalList: [{ tempFilePaths: [], imgList: [] }],
     tempFilePaths: [],
     imgss:'',
+    imgsss: '',
     // 触摸开始时间
     touchStartTime: 0,
     // 触摸结束时间
@@ -94,6 +95,9 @@ Page({
   },
   
   onShareAppMessage: function (e) {
+    this.setData({
+      isRuleTrue:false
+    })
     console.log(this.data.title)
     console.log(this.data.gsimg)
     if (this.data.gsimg =='https://www.donewthing.comnull'){
@@ -116,6 +120,7 @@ Page({
     var that = this;
    // console.log( JSON.stringfy(e.detail.value) )
     console.log(e.detail.value)
+    console.log(Object.keys(e.detail.value).length)
     var evalList = that.data.evalList;
    // var imgs = evalList[0].imgList;
 
@@ -158,6 +163,7 @@ Page({
           input_title: '',
           imgurl:'',
           imgss:'',
+          imgsss:'',
           input_content: '',
           evalList: [{ tempFilePaths: [], imgList: [] }],
           tempFilePaths: [],
@@ -252,23 +258,26 @@ Page({
     });
   },
   div1click:function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../shoucang/shoucang',
     })
   },
-  towode: function () {
+  towode: function (e) {
+    var that=this
     wx.request({
       url: app.globalData.url + 'index/del',//服务器的地址，现在微信小程序只支持https请求，所以调试的时候请勾选不校监安全域名
       data: {
-        id: e.target.dataset.id
-
+        id: e.target.dataset.id,
+        //isRuleTrue:false
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "POST",
       success: function (res) {
-
+       that.setData({
+         isRuleTrue:false
+       })
       }
     })
   },
@@ -557,7 +566,8 @@ Page({
                     //  console.log(res.data)
                     that.setData({
                       imgurl: res.data,
-                      imgss: app.globalData.imgurl + res.data
+                      imgss: app.globalData.imgurl + res.data,
+                      imgsss:'1',
                     })
                   }
                 })

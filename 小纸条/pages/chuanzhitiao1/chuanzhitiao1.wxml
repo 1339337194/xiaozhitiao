@@ -13,12 +13,12 @@
 
 
     <image wx:if="{{imgss!=''}}"   bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{imgss}}"  class="div5" mode="widthFix" style="border-radius:15rpx;"></image>
-        <view  wx:if="{{imgss==''}}"  bindtap="upimg"  class="educt_upload_add" >
+        <view  wx:if="{{imgsss==''}}"  bindtap="upimg"  class="educt_upload_add" >
                <image src='../img/bg6.png' class='div5' style="height:500rpx;"></image>
           </view>
 
    <view class="row {{isRuleTrues?'hide':'show'}}" id="textareawrap" >
-    <textarea wx:if="{{imgss!=''}}" placeholder="说点话吧"  bindinput='texts' name='content'  maxlength='5000' cursor-spacing="80"   class="text1" auto-height value='{{input_content}}'></textarea> 
+    <textarea wx:if="{{imgsss!=''}}" placeholder="说点话吧"  bindinput='texts' name='content'  maxlength='5000' cursor-spacing="80"   class="text1" auto-height value='{{input_content}}'></textarea> 
    </view>
           <view style='width:100%;'>
 <view class="educt_hasupload_pic" style='' wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
@@ -32,8 +32,8 @@
           </view>
 </view>
 
-          <view wx:if="{{imgss!=''}}"  class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}" style=''>
-             <image  src='../img/bg99.png' class='div6'></image>
+          <view wx:if="{{imgsss!=''}}"  class="educt_upload_add" style=''>
+             <image bindtap='joinPicture' data-index="{{0}}"  src='../img/bg99.png' class='div6'></image>
 
 
           </view>
@@ -51,10 +51,12 @@
 
 </form>
 <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
-        <view class='ZhezhaoContent' >
+        
+      
+    </view>
+   <view class="ZhezhaoContent {{isRuleTrue?'show':'hide'}}" >
             <text  style='position:absolute;margin-left:30%;margin-top:76rpx;color:#333;font-size:36rpx;line-height:90rpx;'>是否分享给好友</text>
-            <button  class="btndatis1 ziti31 normal1" style='position:absolute;margin-top:220rpx;margin-left:13%;' bindtap='towode'>取消</button>
+            <button data-id='{{id}}' class="btndatis1 ziti31 normal1" style='position:absolute;margin-top:220rpx;margin-left:13%;' bindtap='towode'>取消</button>
             <button  class="btndatis1 ziti31 normal1" open-type='share' data-id='{{id}}' style='position:absolute;margin-top:220rpx;margin-left:56%;'>分享
             </button>
         </view>
-    </view>

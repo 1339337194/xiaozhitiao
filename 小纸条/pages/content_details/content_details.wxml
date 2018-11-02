@@ -1,5 +1,5 @@
-<view class='box111'>
-    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'  bindtap='zhuan1'></image>
+<view class='box111' bindtap='zhuan1'>
+    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'></image>
     <view style='float:left;margin-top:68rpx;margin-left:20rpx;'>内容</view>
 </view>
 
@@ -54,7 +54,7 @@
 
   <view class='div2' wx:for="{{ping}}" >
     <!-- <image src='../img/bg16.png' style='width:26rpx;height:26rpx;'></image> -->
-    <view style='width:28rpx;height:28rpx;border-radius:500rpx;float:left; background-color:{{item.usercol}};'></view>
+    <view style='width:28rpx;height:28rpx;border-radius:500rpx;float:left; background-color:{{item.usercol}};opacity:0.8;'></view>
     <text data-pid='{{item.id}}'  bindlongtap='havesave' class='ziti5'>{{item.content}}</text>
     <view style='clear:both;'></view>
   </view>
@@ -70,7 +70,7 @@
 <form bindsubmit="formSubmit">
   <view class="div3">
     <textarea placeholder='发表评论...' name='content'  maxlength='500' fixed='true'  bindfocus='onChangeShowState' bindblur="onChangeShowState1"   auto-height cursor-spacing='20'
- class="{{isIphone5?'box113': 'box112'}}">
+ class="{{isIphone5?'box113': 'box112'}}" value="{{cont}}">
     </textarea>
     <view class="hide {{showView1?'':'show'}}">
       <image bindtap='shou'  wx:if="{{shou==0}}" src='../img/bg18.png' class='div32' ></image>

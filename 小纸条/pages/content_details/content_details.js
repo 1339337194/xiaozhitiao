@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cont:'',
     onOff: true,
     collected:'',
     img: app.globalData.imgurl,
@@ -89,8 +90,8 @@ Page({
 
   },
   zhuan1: function () {
-    wx.navigateBack({
-      delta: 9999
+    wx.redirectTo({
+      url: '../chuanzhitiao1/chuanzhitiao1',
     })
   },
   showtip:function(){
@@ -491,7 +492,8 @@ Page({
           pings = pings.concat([{ 'content': e.detail.value.content, 'usercol': res.data.data }]);//
           console.log(pings);
           that.setData({
-            ping: pings
+            ping: pings,
+            cont:''
           })
           // wx.redirectTo({
           //   url: "/pages/content_details/content_details?id=" + that.data.content.id
