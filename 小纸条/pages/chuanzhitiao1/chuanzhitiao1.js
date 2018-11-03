@@ -288,8 +288,13 @@ Page({
     });
   },
   div1click:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../shoucang/shoucang',
+    })
+  },
+  towodeclick: function () {
+    wx.navigateTo({
+      url: '../wode/wode',
     })
   },
   towode: function (e) {

@@ -1,17 +1,6 @@
-<view class='box111' bindtap='zhuan1'>
-    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'></image>
-    <view style='float:left;margin-top:68rpx;margin-left:20rpx;'>收藏夹</view>
-</view>
+
 <view style='width:100%;height:100%;background:#f1f1f1;position:relative;padding-bottom:20rpx;'>
-<view class='div'>
-    <view class='div1'>
-        <view bindtap='shou' class="div11"><text class="ziti1" style='font-weight:600;'>收藏</text></view>
-        <view class="div12"><text class="ziti1" style='font-weight:600;'>我的</text></view>
-    </view>
-</view>
 <view class="wrap">
-
-
     <view class='div2' data-id='{{item.id}}' bindtap='xiang' wx:for="{{zhi}}">
     <view  >
          <view class='div21' style='overflow:hidden;border-radius:10rpx;'><image src="{{img}}{{item.url}}" class="{{item.width >= item.height ? 'gao' : 'kuan'}}" ></image></view>

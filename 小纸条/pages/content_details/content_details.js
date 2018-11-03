@@ -28,7 +28,11 @@ Page({
       urls: e.target.dataset.src.split(',')
     });
   },
-
+  huizhuye:function(){
+    wx.navigateTo({
+      url: '../chuanzhitiao1/chuanzhitiao1',
+    })
+  },
   buttonTap: function () {
     this.setData({
       modalHidden: false

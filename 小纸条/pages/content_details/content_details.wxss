@@ -1,4 +1,14 @@
 /* pages/content_details/content_details.wxss */
+.box-shadow-f{
+ -webkit-box-shadow:0 8rpx 8rpx 8rpx #fbfb9a;
+ -moz-box-shadow:0 8rpx 8rpx 8rpx #fbfb9a;
+ box-shadow:0 8rpx 8rpx 8rpx #fbfb9a;
+}  
+.box-shadow-r{
+ -webkit-box-shadow:0 5rpx 5rpx 5rpx #fd9999;
+ -moz-box-shadow:0 5rpx 5rpx 5rpx #fd9999;
+ box-shadow:0 5rpx 5rpx 5rpx #fd9999;
+}  
 .box112{
   word-wrap:break-word;break-word:break-all;color:#333;min-height:26rpx;max-height:80rpx;background:#f1f0ef;width:500rpx;margin-left:20rpx;margin-top:16rpx;border-radius:258rpx;padding:15rpx 26rpx;float:left;margin-bottom:16rpx;
 }
@@ -88,7 +98,7 @@ float:left;
 }
 .div3{
   position:fixed;bottom:0rpx;background:#fff;z-index:10rpx;width:100%;overflow: hidden;
-min-height: 88rpx;border-top: 2rpx solid #dcdddd;max-height: 138rpx;height: auto;
+min-height: 88rpx;border-top: 1rpx solid #dcdddd;max-height: 138rpx;height: auto;
 }
 .div31{
  margin-top: 2rpx;background:#ffffff;position:fixed;z-index:11rpx;width:100%;height: auto;min-height: 86rpx;

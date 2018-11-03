@@ -1,6 +1,6 @@
 /* pages/chaunzhitiao1/chuanzhitiao1.wxss */
 .box6{
-  width:166rpx;height:60rpx;float:right;margin-right:30rpx;line-height:60rpx;margin-top:170rpx;font-size:28rpx;border-radius:50rpx;background:rgb(241,240,239);
+  width:0rpx;height:60rpx;float:right;line-height:60rpx;font-size:28rpx;border-radius:50rpx;background:rgb(241,240,239);
   opacity: 0.5;
 }
 .ziti31 {
@@ -53,8 +53,8 @@ line-height:70rpx;
 .div1{
   width:250rpx;
   height:100rpx;
-  margin-left: 34%;
-  margin-top: 200rpx;
+  margin-left:90rpx;
+  margin-top: 68rpx;
 }
 .div2{
   width: 166rpx;

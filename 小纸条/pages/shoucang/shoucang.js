@@ -11,12 +11,7 @@ Page({
     className: [],
     bheight: app.globalData.statusBarHeight
   },
-  fanhui: function () {
-    wx.navigateBack({
-      delta: 9999
-    })
-  },
-
+  
   xiang: function (e) {
     wx.redirectTo({
       url: "/pages/content_details/content_details?id=" + e.currentTarget.dataset.id

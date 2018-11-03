@@ -54,7 +54,7 @@ page{background: #f1f1f1;}
 .wrap{
   width: 96%;
   margin-left:2%;
-  margin-top:236rpx;
+  margin-top:30rpx;
 }
 .ziti1{
   font-family: simsun;

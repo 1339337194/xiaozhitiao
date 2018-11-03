@@ -9,11 +9,6 @@ Page({
     zhi:'',
     img: app.globalData.imgurl
   },
-  fanhui: function () {
-    wx.navigateBack({
-      delta: 9999
-    })
-  },
   shou: function () {
     wx.navigateTo({
       url: "/pages/shoucang/shoucang"

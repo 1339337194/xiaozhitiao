@@ -1,8 +1,3 @@
-<view class='box111' bindtap='zhuan1'>
-    <image src='../img/bg29.png' style='width:19rpx;height:36rpx;float:left;margin-left:6%;margin-top:72rpx;'></image>
-    <view style='float:left;margin-top:68rpx;margin-left:20rpx;'>内容</view>
-</view>
-
 <!--pages/content_details/content_details.wxml-->
 <view class="{{isIphoneX?'div37': 'div36'}}">
 
@@ -15,7 +10,7 @@
       </view>
 </view> -->
 
-  <view class="div1" wx:if="{{shou==0&&user==0}}" style='height:auto;position:relative;margin-top:140rpx;'>
+  <view class="div1" wx:if="{{shou==0&&user==0}}" style='height:auto;position:relative;'>
     <image src='../img/bg13.png' class='div11' style="display:{{content.title ? '' : 'none'}}"></image>
     <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
     <view bindtap='showtip' style='height:120rpx;margin-left:92%;'>
@@ -24,7 +19,7 @@
     </view>
   </view>
 
-  <view class="div1" wx:if="{{shou==1||user==1}}" style='height:auto;position:relative;margin-top:140rpx;'>
+  <view class="div1" wx:if="{{shou==1||user==1}}" style='height:auto;position:relative;'>
     <image src='../img/bg13.png' class='div11' style="display:{{content.title ? '' : 'none'}}"></image>
     <view class='ziti1' auto-height style='float:left;'>{{content.title}}</view>
     <view bindtap='buttonTap' style='height:120rpx;margin-left:92%;'>
@@ -86,6 +81,13 @@
     <button style='background:#ffd249;border-radius:50rpx;color:#000;font-size:28rpx;margin-left:592rpx;margin-top:24rpx;width:132rpx;height:56rpx;line-height:56rpx;' formType="submit" class="hide{{showView1?'show':''}}">发表</button>
   
   </view>
+
+    <view style='width:220rpx;height:84rpx;position:fixed;bottom:200rpx;margin-left:100rpx;text-align:center;color:#fff;font-size:36rpx;line-height:84rpx;background:#fece00;border-radius:50rpx;'
+    class='box-shadow-f' bindtap='huizhuye'>我也写
+    </view>
+    <view style='width:220rpx;height:84rpx;position:fixed;bottom:200rpx;margin-left:440rpx;text-align:center;color:#fff;font-size:36rpx;line-height:84rpx;background:#f94528;border-radius:50rpx;'
+    class='box-shadow-r'>分 享
+    </view>
 </form>
 
 <!-- <view class="Zhezhao {{isRuleTrue?'show':'hide'}}"  bindtap='hideerweima'>
