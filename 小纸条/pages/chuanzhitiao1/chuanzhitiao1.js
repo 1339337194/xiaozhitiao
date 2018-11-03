@@ -109,7 +109,8 @@ Page({
    
     return {
       title: this.data.title,
-      path: '/pages/watch/watch?id=' + e.target.dataset.id,
+      //path: '/pages/watch/watch?id=' + e.target.dataset.id,
+      path: "/pages/content_details/content_details?id=" + e.target.dataset.id,
       imageUrl: img //this.data.gsimg,
     }
 
@@ -119,12 +120,42 @@ Page({
   formSubmit: function (e) {
     var that = this;
    // console.log( JSON.stringfy(e.detail.value) )
-    console.log(e.detail.value)
+    console.log(e.detail.value.content)
+    //return
     console.log(Object.keys(e.detail.value).length)
     var evalList = that.data.evalList;
    // var imgs = evalList[0].imgList;
-
-    if (e.detail.value.title == '' && e.detail.value.url == '' && e.detail.value.content == undefined) {
+    if (e.detail.value.content == undefined && e.detail.value.title == '') {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '请填写正文后分享',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return
+    }
+    if (e.detail.value.title == '') {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '请填写标题后分享',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return
+    }
+    if (e.detail.value.content == undefined || e.detail.value.content == null || e.detail.value.content == 'null' ||e.detail.value.content == 'undefined' || e.detail.value.content == '') {
       wx.showModal({
         title: '提示',
         showCancel: false,
@@ -139,7 +170,6 @@ Page({
       })
       return
     }
-
     wx.request({
       url: app.globalData.url + 'index/addzhi', //仅为示例，并非真实的接口地址
       data: {
